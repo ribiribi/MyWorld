@@ -5,17 +5,23 @@
 //  Created by user143594 on 11/11/18.
 //  Copyright © 2018 user143594. All rights reserved.
 //
-
 import UIKit
-import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+    func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let manager = PlaceManager.shared
+        for place in manager.someTestPlaces {
+            manager.append(place)
+        }
+        return true
+    }
+    
+}
+    /*func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
@@ -90,4 +96,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
+*/

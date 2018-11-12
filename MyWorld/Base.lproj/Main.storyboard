@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="812" y="-132.68365817091455"/>
         </scene>
-        <!--Table View Controller-->
+        <!--TableVC-->
         <scene sceneID="rvl-ew-OxZ">
             <objects>
-                <tableViewController id="zqO-Kh-d4t" sceneMemberID="viewController">
+                <tableViewController id="zqO-Kh-d4t" customClass="TableVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WmB-x5-2dm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Title-->
         <scene sceneID="aNb-bu-mXp">
             <objects>
-                <viewController id="1aE-WL-xhe" customClass="DetailViewController" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1aE-WL-xhe" customClass="DetailVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1q5-D9-z98">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +181,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pLH-nR-Psy"/>
+        <segue reference="x5t-Ar-Ght"/>
     </inferredMetricsTieBreakers>
 </document>
