@@ -29,4 +29,14 @@ class TableVC: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let cell = sender as! PlaceCell
+            let index = tableView.indexPath(for: cell)!.row
+            let place = places.someTestPlaces[index]
+            let elementDetailVC = segue.destination as! DetailVC
+            elementDetailVC.place = place
+        }
+    }
 }

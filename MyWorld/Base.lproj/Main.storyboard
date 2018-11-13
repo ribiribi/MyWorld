@@ -109,7 +109,7 @@
                                 <connections>
                                     <outlet property="colorBackgroundView" destination="TQ9-5j-gwB" id="3Nn-jq-Gq1"/>
                                     <outlet property="nameLabel" destination="pmK-5B-JmP" id="y4s-ef-aVH"/>
-                                    <segue destination="1aE-WL-xhe" kind="show" id="QoZ-AX-PWn"/>
+                                    <segue destination="1aE-WL-xhe" kind="show" identifier="toDetail" id="QoZ-AX-PWn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -131,7 +131,49 @@
                     <view key="view" contentMode="scaleToFill" id="1q5-D9-z98">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xbf-R9-BVo">
+                                <rect key="frame" x="10" y="74" width="355" height="333.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-6t-432">
+                                <rect key="frame" x="10" y="407.5" width="355" height="210.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuR-Su-pnP">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7r-u4-TGS">
+                                        <rect key="frame" x="0.0" y="70" width="355" height="70.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSQ-jZ-9N7">
+                                        <rect key="frame" x="0.0" y="140.5" width="355" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cuR-Su-pnP" firstAttribute="height" secondItem="e7r-u4-TGS" secondAttribute="height" id="AG7-0x-gdO"/>
+                                    <constraint firstItem="e7r-u4-TGS" firstAttribute="height" secondItem="aSQ-jZ-9N7" secondAttribute="height" id="KH5-vF-6CN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Ug-6t-432" firstAttribute="top" secondItem="xbf-R9-BVo" secondAttribute="bottom" id="4fQ-5W-c5C"/>
+                            <constraint firstItem="QVD-4K-bB0" firstAttribute="trailing" secondItem="5Ug-6t-432" secondAttribute="trailing" constant="10" id="6bY-mE-9FV"/>
+                            <constraint firstItem="xbf-R9-BVo" firstAttribute="height" secondItem="1q5-D9-z98" secondAttribute="height" multiplier="0.5" id="KBH-zg-LbB"/>
+                            <constraint firstItem="xbf-R9-BVo" firstAttribute="leading" secondItem="QVD-4K-bB0" secondAttribute="leading" constant="10" id="KWf-4L-0i6"/>
+                            <constraint firstItem="xbf-R9-BVo" firstAttribute="top" secondItem="QVD-4K-bB0" secondAttribute="top" constant="10" id="Kxd-DW-hfH"/>
+                            <constraint firstItem="QVD-4K-bB0" firstAttribute="bottom" secondItem="5Ug-6t-432" secondAttribute="bottom" id="NVd-mo-rRs"/>
+                            <constraint firstItem="QVD-4K-bB0" firstAttribute="trailing" secondItem="xbf-R9-BVo" secondAttribute="trailing" constant="10" id="RZC-xb-hAn"/>
+                            <constraint firstItem="5Ug-6t-432" firstAttribute="leading" secondItem="QVD-4K-bB0" secondAttribute="leading" constant="10" id="ruW-Ug-4QA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QVD-4K-bB0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="hEa-g7-1f9">
@@ -154,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmt-8h-Pq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2327" y="-133"/>
+            <point key="canvasLocation" x="2325.5999999999999" y="-133.5832083958021"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tQl-Md-12k">

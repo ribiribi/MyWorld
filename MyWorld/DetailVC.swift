@@ -10,6 +10,9 @@ import UIKit
 
 class DetailVC: UIViewController {
 
+    let places = PlaceManager.shared
+    var place: Place!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
