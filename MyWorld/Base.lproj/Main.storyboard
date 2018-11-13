@@ -54,16 +54,48 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WmB-x5-2dm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.31338106049999997" green="0.61769258179999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.27227791220000003" blue="0.19060763389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeCell" id="t9E-pq-FPT">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeCell" rowHeight="100" id="t9E-pq-FPT" customClass="PlaceCell" customModule="MyWorld" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t9E-pq-FPT" id="TJA-1T-ydY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQ9-5j-gwB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <color key="backgroundColor" red="1" green="0.27227791220000003" blue="0.19060763389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                        <stackView opaque="NO" clipsSubviews="YES" alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOZ-gT-kB9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmK-5B-JmP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.27227791220000003" blue="0.19060763389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TQ9-5j-gwB" firstAttribute="leading" secondItem="TJA-1T-ydY" secondAttribute="leading" id="1xB-p4-Zfd"/>
+                                        <constraint firstAttribute="trailing" secondItem="LOZ-gT-kB9" secondAttribute="trailing" id="30P-gJ-vZe"/>
+                                        <constraint firstAttribute="trailing" secondItem="TQ9-5j-gwB" secondAttribute="trailing" id="FIR-8z-bxN"/>
+                                        <constraint firstItem="LOZ-gT-kB9" firstAttribute="top" secondItem="TJA-1T-ydY" secondAttribute="top" id="Ld5-lo-OLS"/>
+                                        <constraint firstItem="LOZ-gT-kB9" firstAttribute="leading" secondItem="TJA-1T-ydY" secondAttribute="leading" id="hQA-gu-pzE"/>
+                                        <constraint firstItem="TQ9-5j-gwB" firstAttribute="top" secondItem="TJA-1T-ydY" secondAttribute="top" id="qmd-l5-fel"/>
+                                        <constraint firstAttribute="bottom" secondItem="LOZ-gT-kB9" secondAttribute="bottom" id="v1I-GK-SkF"/>
+                                        <constraint firstAttribute="bottom" secondItem="TQ9-5j-gwB" secondAttribute="bottom" id="z1F-il-shi"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.71012526040000001" green="0.89250950100000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="colorBackgroundView" destination="TQ9-5j-gwB" id="3Nn-jq-Gq1"/>
+                                    <outlet property="nameLabel" destination="pmK-5B-JmP" id="y4s-ef-aVH"/>
                                     <segue destination="1aE-WL-xhe" kind="show" id="QoZ-AX-PWn"/>
                                 </connections>
                             </tableViewCell>
@@ -77,7 +109,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OB-mr-ErQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="-133"/>
+            <point key="canvasLocation" x="1572" y="-133.5832083958021"/>
         </scene>
         <!--Title-->
         <scene sceneID="aNb-bu-mXp">
@@ -183,4 +215,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="x5t-Ar-Ght"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.62970179390000003" green="0.8935919752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
