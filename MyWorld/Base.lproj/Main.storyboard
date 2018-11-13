@@ -51,10 +51,10 @@
         <scene sceneID="rvl-ew-OxZ">
             <objects>
                 <tableViewController id="zqO-Kh-d4t" customClass="TableVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WmB-x5-2dm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WmB-x5-2dm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.31338106049999997" green="0.61769258179999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.71012526040000001" green="0.89250950100000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="0.27227791220000003" blue="0.19060763389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeCell" rowHeight="100" id="t9E-pq-FPT" customClass="PlaceCell" customModule="MyWorld" customModuleProvider="target">
@@ -65,34 +65,47 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQ9-5j-gwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
-                                            <color key="backgroundColor" red="1" green="0.27227791220000003" blue="0.19060763389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="8" y="10" width="359" height="89.5"/>
+                                            <color key="backgroundColor" red="0.51632848740000004" green="0.72841790139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                         <stackView opaque="NO" clipsSubviews="YES" alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOZ-gT-kB9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="8" y="10" width="359" height="89.5"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="Gan-TR-c7n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="89.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="Wna-bP-2f9"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmK-5B-JmP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                                    <rect key="frame" x="70" y="0.0" width="239" height="89.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="jA1-el-7YI">
+                                                    <rect key="frame" x="309" y="0.0" width="50" height="89.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="PZf-Xe-BET"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.27227791220000003" blue="0.19060763389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="TQ9-5j-gwB" firstAttribute="leading" secondItem="TJA-1T-ydY" secondAttribute="leading" id="1xB-p4-Zfd"/>
-                                        <constraint firstAttribute="trailing" secondItem="LOZ-gT-kB9" secondAttribute="trailing" id="30P-gJ-vZe"/>
-                                        <constraint firstAttribute="trailing" secondItem="TQ9-5j-gwB" secondAttribute="trailing" id="FIR-8z-bxN"/>
-                                        <constraint firstItem="LOZ-gT-kB9" firstAttribute="top" secondItem="TJA-1T-ydY" secondAttribute="top" id="Ld5-lo-OLS"/>
-                                        <constraint firstItem="LOZ-gT-kB9" firstAttribute="leading" secondItem="TJA-1T-ydY" secondAttribute="leading" id="hQA-gu-pzE"/>
-                                        <constraint firstItem="TQ9-5j-gwB" firstAttribute="top" secondItem="TJA-1T-ydY" secondAttribute="top" id="qmd-l5-fel"/>
+                                        <constraint firstItem="TQ9-5j-gwB" firstAttribute="leading" secondItem="TJA-1T-ydY" secondAttribute="leading" constant="8" id="1xB-p4-Zfd"/>
+                                        <constraint firstAttribute="trailing" secondItem="LOZ-gT-kB9" secondAttribute="trailing" constant="8" id="30P-gJ-vZe"/>
+                                        <constraint firstAttribute="trailing" secondItem="TQ9-5j-gwB" secondAttribute="trailing" constant="8" id="FIR-8z-bxN"/>
+                                        <constraint firstItem="LOZ-gT-kB9" firstAttribute="top" secondItem="TJA-1T-ydY" secondAttribute="top" constant="10" id="Ld5-lo-OLS"/>
+                                        <constraint firstItem="LOZ-gT-kB9" firstAttribute="leading" secondItem="TJA-1T-ydY" secondAttribute="leading" constant="8" id="hQA-gu-pzE"/>
+                                        <constraint firstItem="TQ9-5j-gwB" firstAttribute="top" secondItem="TJA-1T-ydY" secondAttribute="top" constant="10" id="qmd-l5-fel"/>
                                         <constraint firstAttribute="bottom" secondItem="LOZ-gT-kB9" secondAttribute="bottom" id="v1I-GK-SkF"/>
                                         <constraint firstAttribute="bottom" secondItem="TQ9-5j-gwB" secondAttribute="bottom" id="z1F-il-shi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.71012526040000001" green="0.89250950100000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="colorBackgroundView" destination="TQ9-5j-gwB" id="3Nn-jq-Gq1"/>
                                     <outlet property="nameLabel" destination="pmK-5B-JmP" id="y4s-ef-aVH"/>
@@ -111,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="1572" y="-133.5832083958021"/>
         </scene>
-        <!--Title-->
+        <!--Detail-->
         <scene sceneID="aNb-bu-mXp">
             <objects>
                 <viewController id="1aE-WL-xhe" customClass="DetailVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +134,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QVD-4K-bB0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="hEa-g7-1f9">
+                    <navigationItem key="navigationItem" title="Detail" id="hEa-g7-1f9">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="edit" id="xnH-oq-Dym">
                                 <connections>
@@ -212,6 +225,10 @@
             <point key="canvasLocation" x="812" y="533.88305847076469"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow" width="50" height="50"/>
+        <image name="restaurant" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x5t-Ar-Ght"/>
     </inferredMetricsTieBreakers>

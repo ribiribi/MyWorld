@@ -13,7 +13,7 @@ class TableVC: UITableViewController {
     let places = PlaceManager.shared
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
 
     // MARK: --------------------------------- Table view data source
