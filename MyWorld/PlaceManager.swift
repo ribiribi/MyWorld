@@ -68,13 +68,13 @@ class PlaceManager {
     // MARK: - Only for demo purposes
     var someTestPlaces = [
         Place(name: "UOC 22@",
-              description: "Seu de la Universitat Oberta de Catalunya",
+              description: "Es tracta de la seu de la Universitat Oberta de Catalunya.",
               image_in: nil),
         Place(name: "Rostisseria Lolita",
-              description: "Els millors pollastres de Sant Cugat",
+              description: "Els millors pollastres de Sant Cugat i possiblement de tots els multiversos.",
               image_in: nil),
         Place(name: "CIFO L'hospitalet",
-              description: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
+              description: "Seu del Centre d'Innovació i Formació per a l'Ocupació.",
               image_in: nil),
         /*PlaceTourist(name: "CosmoCaixa",
                      description: "Museu de la Ciència de Barcelona",

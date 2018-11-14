@@ -191,6 +191,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionView" destination="1q5-D9-z98" id="DBm-Fj-gRs"/>
                         <outlet property="image" destination="xbf-R9-BVo" id="YRo-Jx-DFO"/>
                         <outlet property="name" destination="cuR-Su-pnP" id="yLA-2a-ttv"/>
                         <segue destination="kTy-uu-9gw" kind="show" identifier="toDescription" id="fVj-fJ-l3B"/>
@@ -215,23 +216,40 @@
             </objects>
             <point key="canvasLocation" x="3120" y="263"/>
         </scene>
-        <!--Title-->
+        <!--Description-->
         <scene sceneID="xy0-BZ-7WO">
             <objects>
-                <viewController id="kTy-uu-9gw" sceneMemberID="viewController">
+                <viewController id="kTy-uu-9gw" customClass="DetailVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="klH-V4-Yiw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRb-6D-KDd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="n5C-Qh-Bnb" firstAttribute="trailing" secondItem="BRb-6D-KDd" secondAttribute="trailing" id="65a-U3-HmT"/>
+                            <constraint firstItem="BRb-6D-KDd" firstAttribute="top" secondItem="n5C-Qh-Bnb" secondAttribute="top" id="6rF-fJ-0Gm"/>
+                            <constraint firstItem="n5C-Qh-Bnb" firstAttribute="bottom" secondItem="BRb-6D-KDd" secondAttribute="bottom" id="DKY-Da-Iyr"/>
+                            <constraint firstItem="BRb-6D-KDd" firstAttribute="leading" secondItem="n5C-Qh-Bnb" secondAttribute="leading" id="rYf-Nz-WYv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n5C-Qh-Bnb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Kdi-Gw-d0f">
+                    <navigationItem key="navigationItem" title="Description" id="Kdi-Gw-d0f">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Tdb-es-fmK">
                             <connections>
                                 <segue destination="rZE-Y7-a9L" kind="show" id="pLH-nR-Psy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="BRb-6D-KDd" id="bhj-hb-D1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiC-5l-fj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,7 +292,7 @@
         <image name="restaurant" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x5t-Ar-Ght"/>
+        <segue reference="pLH-nR-Psy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.62970179390000003" green="0.8935919752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
