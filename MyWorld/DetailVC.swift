@@ -10,11 +10,17 @@ import UIKit
 
 class DetailVC: UIViewController {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    
     let places = PlaceManager.shared
     var place: Place!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        name.text = place.name
+        image?.image = UIImage(named: place.name)
     }
     
     // MARK: - Navigation

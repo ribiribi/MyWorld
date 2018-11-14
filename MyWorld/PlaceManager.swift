@@ -40,6 +40,30 @@ class PlaceManager {
         places = places.filter {$0.id != place.id}
     }
     
+    func jsonFrom(places: [Place]) -> Data?{
+        var jsonData: Data? = nil
+        let jsonEnconder = JSONEncoder()
+        
+        do{
+            jsonData = try jsonEnconder.encode(places)
+        } catch {
+            return nil
+        }
+        return jsonData
+    }
+    
+    func placesFrom (jsonData: Data) -> [Place]{
+        let jsonDecoder = JSONDecoder()
+        let places: [Place]
+        
+        do{
+            places = try jsonDecoder.decode([Place].self, from: jsonData)
+        } catch{
+            return []
+        }
+        return places
+    }
+    
     
     // MARK: - Only for demo purposes
     var someTestPlaces = [

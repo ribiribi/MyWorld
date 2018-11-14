@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class Place {
+class Place: Codable {
     
     enum PlaceType {
         case generic
@@ -17,11 +17,11 @@ class Place {
     }
     
     var id = ""
-    var type = PlaceType.generic
+    //var type = PlaceType.generic
     var name = ""
     var description = ""
     //var webAddress = ""
-    var location: CLLocationCoordinate2D!
+    //var location: CLLocationCoordinate2D!
     var image: Data?
     
     //MARK: - Inits
@@ -38,7 +38,7 @@ class Place {
     
     init(type: PlaceType, name: String, description: String, webAddress: String, image_in: Data?) {
         self.id = UUID().uuidString
-        self.type = type
+        //self.type = type
         self.name = name
         self.description = description
         //self.webAddress = webAddress

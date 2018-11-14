@@ -132,7 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xbf-R9-BVo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="xbf-R9-BVo">
                                 <rect key="frame" x="10" y="74" width="355" height="333.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-6t-432">
@@ -191,6 +191,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="image" destination="xbf-R9-BVo" id="YRo-Jx-DFO"/>
+                        <outlet property="name" destination="cuR-Su-pnP" id="yLA-2a-ttv"/>
                         <segue destination="kTy-uu-9gw" kind="show" identifier="toDescription" id="fVj-fJ-l3B"/>
                     </connections>
                 </viewController>
