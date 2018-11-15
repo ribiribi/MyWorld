@@ -12,8 +12,8 @@ class DetailVC: UIViewController {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet var descriptionView: UIView!
+    //@IBOutlet var descriptionView: UIView!
+    @IBOutlet var detailView: UIView!
     
     
     let places = PlaceManager.shared
@@ -33,10 +33,10 @@ class DetailVC: UIViewController {
         let directions: [UISwipeGestureRecognizer.Direction] = [.up, .down, .right, .left]
         for direction in directions {
             swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(DetailVC.swipeView(_:)))
-            descriptionView?.addGestureRecognizer(swipeGesture)
+            detailView?.addGestureRecognizer(swipeGesture)
             swipeGesture.direction = direction
-            descriptionView?.isUserInteractionEnabled = true
-            descriptionView?.isMultipleTouchEnabled = true
+            detailView?.isUserInteractionEnabled = true
+            detailView?.isMultipleTouchEnabled = true
         }
     }
     
@@ -44,22 +44,22 @@ class DetailVC: UIViewController {
 // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDescription" {
-                let descriptionVC = segue.destination as! DetailVC
-                descriptionVC.descriptionLabel?.text = place.description
+            let descriptionVC = segue.destination as! DescriptionVC
+            descriptionVC.toDescriptionLabel = place.description
         }
     }
     
     @objc func swipeView(_ sender : UISwipeGestureRecognizer){
         UIView.animate(withDuration: 1.0) {
             if sender.direction == .left {
-                self.descriptionView.frame = CGRect(x: self.view.frame.size.width - self.descriptionView.frame.size.width, y: self.descriptionView.frame.origin.y , width: self.descriptionView.frame.size.width, height: self.descriptionView.frame.size.height)
+                self.detailView.frame = CGRect(x: self.view.frame.size.width - self.detailView.frame.size.width, y: self.detailView.frame.origin.y , width: self.detailView.frame.size.width, height: self.detailView.frame.size.height)
                 self.performSegue(withIdentifier: "toDescription", sender: UIView())
             }
 //            else if {
 //                  intentar fer un undwind
 //            }
-            self.descriptionView.layoutIfNeeded()
-            self.descriptionView.setNeedsDisplay()
+            self.detailView.layoutIfNeeded()
+            self.detailView.setNeedsDisplay()
         }
     }
 }

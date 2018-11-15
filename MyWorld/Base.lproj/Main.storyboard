@@ -191,7 +191,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionView" destination="1q5-D9-z98" id="DBm-Fj-gRs"/>
+                        <outlet property="detailView" destination="1q5-D9-z98" id="8J4-eZ-M1l"/>
                         <outlet property="image" destination="xbf-R9-BVo" id="YRo-Jx-DFO"/>
                         <outlet property="name" destination="cuR-Su-pnP" id="yLA-2a-ttv"/>
                         <segue destination="kTy-uu-9gw" kind="show" identifier="toDescription" id="fVj-fJ-l3B"/>
@@ -219,7 +219,7 @@
         <!--Description-->
         <scene sceneID="xy0-BZ-7WO">
             <objects>
-                <viewController id="kTy-uu-9gw" customClass="DetailVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kTy-uu-9gw" customClass="DescriptionVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="klH-V4-Yiw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,7 +248,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="descriptionLabel" destination="BRb-6D-KDd" id="bhj-hb-D1U"/>
+                        <outlet property="descriptionLabel" destination="BRb-6D-KDd" id="CYf-71-OVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiC-5l-fj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,7 +292,7 @@
         <image name="restaurant" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pLH-nR-Psy"/>
+        <segue reference="x5t-Ar-Ght"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.62970179390000003" green="0.8935919752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
