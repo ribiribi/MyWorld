@@ -12,8 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+
     func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let manager = PlaceManager.shared
+
+// MARK - Save and load data
         
 //        if let jsonData = manager.jsonFrom(places: manager.someTestPlaces){
 //            let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -38,11 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             
         }
-        
-//        let manager = PlaceManager.shared
-//        for place in manager.someTestPlaces {
-//            manager.append(place)
-//        }
         return true
     }
 }

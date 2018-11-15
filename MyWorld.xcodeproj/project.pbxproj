@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0915F659219DCDB300EE640E /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915F658219DCDB300EE640E /* EditVC.swift */; };
 		09240C15219D53CF0087E566 /* DescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09240C14219D53CF0087E566 /* DescriptionVC.swift */; };
 		092E221021998992008579CA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E220F21998992008579CA /* Place.swift */; };
 		092E221221998E67008579CA /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E221121998E67008579CA /* PlaceManager.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0915F658219DCDB300EE640E /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		09240C14219D53CF0087E566 /* DescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionVC.swift; sourceTree = "<group>"; };
 		092E220F21998992008579CA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		092E221121998E67008579CA /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				092E2217219996CE008579CA /* TableVC.swift */,
 				092E221521999652008579CA /* DetailVC.swift */,
 				09240C14219D53CF0087E566 /* DescriptionVC.swift */,
+				0915F658219DCDB300EE640E /* EditVC.swift */,
 				092E220F21998992008579CA /* Place.swift */,
 				092E221121998E67008579CA /* PlaceManager.swift */,
 				095945BE2199CB2300A414F7 /* PlaceCell.swift */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092E221621999652008579CA /* DetailVC.swift in Sources */,
+				0915F659219DCDB300EE640E /* EditVC.swift in Sources */,
 				098358E6219833C100503202 /* AppDelegate.swift in Sources */,
 				095945BF2199CB2300A414F7 /* PlaceCell.swift in Sources */,
 				09240C15219D53CF0087E566 /* DescriptionVC.swift in Sources */,

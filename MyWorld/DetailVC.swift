@@ -12,9 +12,7 @@ class DetailVC: UIViewController {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
-    //@IBOutlet var descriptionView: UIView!
-    @IBOutlet var detailView: UIView!
-    
+    @IBOutlet var detailView: UIView!    
     
     let places = PlaceManager.shared
     var place: Place!
@@ -46,6 +44,10 @@ class DetailVC: UIViewController {
         if segue.identifier == "toDescription" {
             let descriptionVC = segue.destination as! DescriptionVC
             descriptionVC.toDescriptionLabel = place.description
+        }
+        if segue.identifier == "toEdit"{
+            let editVC = segue.destination as! EditVC
+            editVC.toNameEdit = place.name
         }
     }
     

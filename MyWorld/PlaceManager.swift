@@ -40,6 +40,7 @@ class PlaceManager {
         places = places.filter {$0.id != place.id}
     }
     
+    //MARK - Access to files
     func jsonFrom(places: [Place]) -> Data?{
         var jsonData: Data? = nil
         let jsonEnconder = JSONEncoder()
@@ -68,10 +69,10 @@ class PlaceManager {
     // MARK: - Only for demo purposes
     var someTestPlaces = [
         Place(name: "UOC 22@",
-              description: "Es tracta de la seu de la Universitat Oberta de Catalunya.",
+              description: "Es tracta de la seu de la Universitat Oberta de Catalunya. BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA",
               image_in: nil),
         Place(name: "Rostisseria Lolita",
-              description: "Els millors pollastres de Sant Cugat i possiblement de tots els multiversos.",
+              description: "Els millors pollastres de Sant Cugat i possiblement de tots els multiversos. BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA",
               image_in: nil),
         Place(name: "CIFO L'hospitalet",
               description: "Seu del Centre d'Innovació i Formació per a l'Ocupació.",
