@@ -11,20 +11,28 @@ import UIKit
 class EditVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var imageEdit: UIImageView!
-    @IBOutlet weak var nameEdit: UITextField!
+    @IBOutlet weak var nameEdit: UITextView!
     
     var toNameEdit = ""
+    let manager = PlaceManager.shared
+    var place: Place!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.nameEdit.text = toNameEdit
-       
-
+        self.nameEdit.text = place.name
     }
+    
     internal func textViewDidChange(_ textView: UITextView){
-        print ("Changed")
-        print (" ")
+        for item in self.manager.places {
+            if place.id == item.id{
+                //Save into manager
+                place.name = nameEdit.text
+                
+                //Save into file
+                manager.saveJsonToFile(origin: manager.places)
+            }
+        }
     }
 
 }

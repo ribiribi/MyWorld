@@ -11,8 +11,10 @@ import Foundation
 class PlaceManager {
 
     static let shared = PlaceManager()
-    //var newPlace = [Place]()
-    private var places = [Place]()
+   
+    //private var places = [Place]()
+    
+    var places = [Place]()
     
     private init() {}
     
@@ -40,7 +42,7 @@ class PlaceManager {
         places = places.filter {$0.id != place.id}
     }
     
-    //MARK - Access to files
+    //MARK - Access to files and codification
     func jsonFrom(places: [Place]) -> Data?{
         var jsonData: Data? = nil
         let jsonEnconder = JSONEncoder()
@@ -64,7 +66,22 @@ class PlaceManager {
         }
         return places
     }
-    
+
+    func saveJsonToFile(origin: [Place]){
+        let manager = PlaceManager.shared
+        //let places: [Place]
+        
+        if let jsonData = manager.jsonFrom(places: origin){
+            let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let filePath = docsPath.appendingPathComponent("places.json")
+            do{
+                try jsonData.write(to: filePath)
+                print ("Fitxers guardats en local")
+            } catch {
+                print ("Error al escriure fitxer local")
+            }
+        }
+    }
     
     // MARK: - Only for demo purposes
     var someTestPlaces = [

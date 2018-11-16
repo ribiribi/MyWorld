@@ -8,6 +8,8 @@
 //Detail and Description ViewControllers
 import UIKit
 
+var refresh = false
+
 class DetailVC: UIViewController {
 
     @IBOutlet weak var name: UILabel!
@@ -36,7 +38,17 @@ class DetailVC: UIViewController {
             detailView?.isUserInteractionEnabled = true
             detailView?.isMultipleTouchEnabled = true
         }
+        
+        refresh = true
     }
+
+    //MARK - Refresh
+    override func viewDidAppear(_ animated: Bool){
+        if refresh == true {
+            name?.text = place.name
+        }
+    }
+    
     
     
 // MARK: - Navigation
@@ -47,7 +59,9 @@ class DetailVC: UIViewController {
         }
         if segue.identifier == "toEdit"{
             let editVC = segue.destination as! EditVC
-            editVC.toNameEdit = place.name
+//editVC.toNameEdit = place.name
+            editVC.place = place
+           
         }
     }
     

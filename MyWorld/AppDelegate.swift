@@ -17,18 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let manager = PlaceManager.shared
 
 // MARK - Save and load data
+        //Save data
+        //manager.saveJsonToFile(origin: manager.someTestPlaces)
         
-//        if let jsonData = manager.jsonFrom(places: manager.someTestPlaces){
-//            let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//            let filePath = docsPath.appendingPathComponent("places.json")
-//            do{
-//                try jsonData.write(to: filePath)
-//                print ("Fitxers guardats en local")
-//            } catch {
-//                print ("Error al escriure fitxer local")
-//            }
-//        }
-        
+        //Load data
         let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = docsPath.appendingPathComponent("places.json")
         do{
