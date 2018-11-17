@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class PlaceManager {
 
@@ -86,20 +87,25 @@ class PlaceManager {
     // MARK: - Only for demo purposes
     var someTestPlaces = [
         Place(name: "UOC 22@",
-              description: "Es tracta de la seu de la Universitat Oberta de Catalunya. BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA",
-              image_in: nil),
+              description: "Seu de la Universitat Oberta de Catalunya",
+              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+              image_in: nil, position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.3)),
         Place(name: "Rostisseria Lolita",
-              description: "Els millors pollastres de Sant Cugat i possiblement de tots els multiversos. BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA BLA BLA BAL BLA",
-              image_in: nil),
+              description: "Els millors pollastres de Sant Cugat",
+              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+              image_in: nil, position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.3)),
         Place(name: "CIFO L'hospitalet",
-              description: "Seu del Centre d'Innovació i Formació per a l'Ocupació.",
-              image_in: nil),
-        /*PlaceTourist(name: "CosmoCaixa",
+              description: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
+              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+              image_in: nil, position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.3))
+    
+        /*
+        PlaceTourist(name: "CosmoCaixa",
                      description: "Museu de la Ciència de Barcelona",
                      discount_tourist: "50%", webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona", image_in: nil),
         PlaceTourist(name: "Park Güell",
                      description: "Obra d'Antoni Gaudí a Barcelona",
                      discount_tourist: "10%", webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona", image_in: nil)
- */
+        */
     ]
 }

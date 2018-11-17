@@ -15,9 +15,7 @@ class PlaceCell: UITableViewCell {
         didSet{
             colorBackgroundView.layer.cornerRadius = 10
         }
-    }
-    
-    
+    }    
     
     override func awakeFromNib() {
         super.awakeFromNib()

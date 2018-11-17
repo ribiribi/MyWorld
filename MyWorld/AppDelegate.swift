@@ -15,24 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let manager = PlaceManager.shared
-
+       
+//Manual append - we can remove that
+        for place in manager.someTestPlaces {
+            manager.append(place)
+        }
 // MARK - Save and load data
-        //Save data
+//Save data
         //manager.saveJsonToFile(origin: manager.someTestPlaces)
         
-        //Load data
-        let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let filePath = docsPath.appendingPathComponent("places.json")
-        do{
-            let jasonData = try Data(contentsOf: filePath)
-            let places = manager.placesFrom(jsonData: jasonData)
-            
-            for place in places{
-                manager.append(place)
-            }
-        } catch {
-            
-        }
+//Load data
+//        let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        let filePath = docsPath.appendingPathComponent("places.json")
+//        do{
+//            let jasonData = try Data(contentsOf: filePath)
+//            let places = manager.placesFrom(jsonData: jasonData)
+//
+//            for place in places{
+//                manager.append(place)
+//            }
+//        } catch {
+//
+//        }
         return true
     }
 }
