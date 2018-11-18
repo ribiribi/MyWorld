@@ -17,26 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let manager = PlaceManager.shared
        
 //Manual append - we can remove that
-        for place in manager.someTestPlaces {
-            manager.append(place)
-        }
+//        for place in manager.someTestPlaces {
+//            manager.append(place)
+//        }
+        
 // MARK - Save and load data
 //Save data
-        //manager.saveJsonToFile(origin: manager.someTestPlaces)
+//        manager.saveJsonToFile(origin: manager.someTestPlaces)
         
 //Load data
-//        let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//        let filePath = docsPath.appendingPathComponent("places.json")
-//        do{
-//            let jasonData = try Data(contentsOf: filePath)
-//            let places = manager.placesFrom(jsonData: jasonData)
-//
-//            for place in places{
-//                manager.append(place)
-//            }
-//        } catch {
-//
-//        }
+        let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let filePath = docsPath.appendingPathComponent("places.json")
+        do{
+            let jasonData = try Data(contentsOf: filePath)
+            let places = manager.placesFrom(jsonData: jasonData)
+
+            for place in places{
+                manager.append(place)
+            }
+        } catch {
+
+        }
         return true
     }
 }
