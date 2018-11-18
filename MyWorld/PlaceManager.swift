@@ -70,7 +70,6 @@ class PlaceManager {
 
     func saveJsonToFile(origin: [Place]){
         let manager = PlaceManager.shared
-        //let places: [Place]
         
         if let jsonData = manager.jsonFrom(places: origin){
             let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -87,24 +86,24 @@ class PlaceManager {
     // MARK: - Only for demo purposes
     var someTestPlaces = [
         Place(name: "UOC 22@",
-              description: "Seu de la Universitat Oberta de Catalunya",
+              descriptionPlace: "Seu de la Universitat Oberta de Catalunya",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil, position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.3)),
         Place(name: "Rostisseria Lolita",
-              description: "Els millors pollastres de Sant Cugat",
+              descriptionPlace: "Els millors pollastres de Sant Cugat",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil, position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.3)),
         Place(name: "CIFO L'hospitalet",
-              description: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
+              descriptionPlace: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil, position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.3))
     
         /*
         PlaceTourist(name: "CosmoCaixa",
-                     description: "Museu de la Ciència de Barcelona",
+                     descriptionPlace: "Museu de la Ciència de Barcelona",
                      discount_tourist: "50%", webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona", image_in: nil),
         PlaceTourist(name: "Park Güell",
-                     description: "Obra d'Antoni Gaudí a Barcelona",
+                     descriptionPlace: "Obra d'Antoni Gaudí a Barcelona",
                      discount_tourist: "10%", webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona", image_in: nil)
         */
     ]

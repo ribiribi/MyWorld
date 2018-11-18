@@ -55,7 +55,7 @@ class DetailVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDescription" {
             let descriptionVC = segue.destination as! DescriptionVC
-            descriptionVC.toDescriptionLabel = place.description
+            descriptionVC.toDescriptionLabel = place.descriptionPlace
         }
         if segue.identifier == "toEdit"{
             let editVC = segue.destination as! EditVC

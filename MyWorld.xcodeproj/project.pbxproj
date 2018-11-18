@@ -19,6 +19,7 @@
 		098358EE219833C100503202 /* MyWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 098358EC219833C100503202 /* MyWorld.xcdatamodeld */; };
 		098358F0219833C200503202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098358EF219833C200503202 /* Assets.xcassets */; };
 		098358F3219833C200503202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098358F1219833C200503202 /* LaunchScreen.storyboard */; };
+		09EC90B221A1651F0091450F /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC90B121A1651F0091450F /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		098358EF219833C200503202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		098358F2219833C200503202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		098358F4219833C200503202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09EC90B121A1651F0091450F /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				092E221521999652008579CA /* DetailVC.swift */,
 				09240C14219D53CF0087E566 /* DescriptionVC.swift */,
 				0915F658219DCDB300EE640E /* EditVC.swift */,
+				09EC90B121A1651F0091450F /* MapVC.swift */,
 				098358EF219833C200503202 /* Assets.xcassets */,
 				092E220F21998992008579CA /* Place.swift */,
 				092E221121998E67008579CA /* PlaceManager.swift */,
@@ -161,6 +164,7 @@
 				098358E6219833C100503202 /* AppDelegate.swift in Sources */,
 				095945BF2199CB2300A414F7 /* PlaceCell.swift in Sources */,
 				09240C15219D53CF0087E566 /* DescriptionVC.swift in Sources */,
+				09EC90B221A1651F0091450F /* MapVC.swift in Sources */,
 				098358EE219833C100503202 /* MyWorld.xcdatamodeld in Sources */,
 				092E2218219996CE008579CA /* TableVC.swift in Sources */,
 				092E221021998992008579CA /* Place.swift in Sources */,
