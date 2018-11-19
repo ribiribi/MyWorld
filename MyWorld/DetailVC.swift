@@ -15,6 +15,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet var detailView: UIView!    
+    @IBOutlet weak var webAddress: UILabel!
     
     let places = PlaceManager.shared
     var place: Place!
@@ -24,6 +25,8 @@ class DetailVC: UIViewController {
         
         name?.text = place.name
         image?.image = UIImage(named: place.name)
+        webAddress?.text = place.webAddress
+        
         //descriptionLabel?.text = place?.description
         
         
@@ -42,13 +45,15 @@ class DetailVC: UIViewController {
         refresh = true
     }
 
-    //MARK - Refresh
+//MARK - Refresh
     override func viewDidAppear(_ animated: Bool){
         if refresh == true {
             name?.text = place.name
+            webAddress?.text = place.webAddress
+            image?.image = UIImage(named: place.imageName)
+            
         }
     }
-    
     
     
 // MARK: - Navigation
@@ -59,7 +64,6 @@ class DetailVC: UIViewController {
         }
         if segue.identifier == "toEdit"{
             let editVC = segue.destination as! EditVC
-//editVC.toNameEdit = place.name
             editVC.place = place
            
         }

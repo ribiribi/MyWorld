@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 // MARK - Save and load data
 //Save data
-//        manager.saveJsonToFile(origin: manager.someTestPlaces)
+        //manager.saveJsonToFile(origin: manager.someTestPlaces)
         
 //Load data
         let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
