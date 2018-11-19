@@ -92,7 +92,7 @@ class PlaceManager {
               position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2),
               imageName: "UOC 22@"),
         Place(name: "Rostisseria Lolita",
-              descriptionPlace: "Els millors pollastres de Sant Cugat",
+              descriptionPlace: "Els millors pollastres de Sant Cugat,de la comarca i dels multiversos coneguts...",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.7, longitude: 2.3),

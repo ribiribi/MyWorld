@@ -20,7 +20,9 @@ class EditVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.nameEdit.text = place.name
+        self.nameEdit?.text = place.name
+        self.imageEdit?.image = UIImage(named: place.imageName)
+        
     }
     
     internal func textViewDidChange(_ textView: UITextView){

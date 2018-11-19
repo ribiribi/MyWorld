@@ -11,6 +11,7 @@ import UIKit
 class TableVC: UITableViewController {
 
     let places = PlaceManager.shared
+    var refresh = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class TableVC: UITableViewController {
         
         cell.nameLabel.text = place?.name
         
+        refresh = true
+        
         return cell
     }
     
@@ -39,6 +42,12 @@ class TableVC: UITableViewController {
             let place = places.places[index]
             let elementDetailVC = segue.destination as! DetailVC
             elementDetailVC.place = place
+        }
+    }
+    //MARK: -----------------------------------Refresh
+    override func viewDidAppear(_ animated: Bool){
+        if refresh == true {
+            self.tableView.reloadData()
         }
     }
 }
