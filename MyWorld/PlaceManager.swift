@@ -12,15 +12,12 @@ import MapKit
 class PlaceManager {
 
     static let shared = PlaceManager()
-   
-    //private var places = [Place]()
-    
+
     var places = [Place]()
     
     private init() {}
     
-    
-    // MARK: - Class functions
+    //MARK: --------------------------------------- Class functions
     func append(_ place: Place) {
         places.append(place)
     }
@@ -43,7 +40,7 @@ class PlaceManager {
         places = places.filter {$0.id != place.id}
     }
     
-    //MARK - Access to files and codification
+    //MARK: ---------------------------------------  Access to files and codification
     func jsonFrom(places: [Place]) -> Data?{
         var jsonData: Data? = nil
         let jsonEnconder = JSONEncoder()
@@ -83,7 +80,7 @@ class PlaceManager {
         }
     }
     
-    // MARK: - Only for demo purposes
+    //MARK: ---------------------------------------  Only for demo purposes
     var someTestPlaces = [
         Place(name: "UOC 22@",
               descriptionPlace: "Seu de la Universitat Oberta de Catalunya",

@@ -30,7 +30,7 @@ class DetailVC: UIViewController {
         //descriptionLabel?.text = place?.description
         
         
-//MARK: - Slide to description view
+        //MARK: --------------------------------------- Slide to description view
         var swipeGesture  = UISwipeGestureRecognizer()
         
         let directions: [UISwipeGestureRecognizer.Direction] = [.up, .down, .right, .left]
@@ -45,7 +45,7 @@ class DetailVC: UIViewController {
         refresh = true
     }
 
-//MARK - Refresh
+    //MARK: --------------------------------------- Refresh
     override func viewDidAppear(_ animated: Bool){
         if refresh == true {
             name?.text = place.name
@@ -56,7 +56,7 @@ class DetailVC: UIViewController {
     }
     
     
-// MARK: - Navigation
+    // MARK: ---------------------------------------  Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDescription" {
             let descriptionVC = segue.destination as! DescriptionVC
