@@ -95,14 +95,21 @@ class PlaceManager {
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.7, longitude: 2.3),
               imageName: "Rostisseria Lolita",
-              iconTable: "restaurantBlue"),
+              iconTable: "pizzaBlue"),
         Place(name: "CIFO L'hospitalet",
               descriptionPlace: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.1, longitude: 2.5),
               imageName: "cifo",
-              iconTable: "cultureBlue")
+              iconTable: "cultureBlue"),
+        Place(name: "Out of china",
+              descriptionPlace: "Millor restaurant chines de Barcelona. Amb tocs de cuina fusió catalana, ambient acollidor. Reservar sempre, doncs aqeust es un dels seus punts fluixos: l'ambient respira un xic d'estress.",
+              webAddress: "http://www.outofchinabarcelona.com/",
+              image_in: nil,
+              position: CLLocationCoordinate2D(latitude: 42.1, longitude: 2.5),
+              imageName: "outOfChina",
+              iconTable: "restaurantBlue")
 
         /*
         PlaceTourist(name: "CosmoCaixa",
