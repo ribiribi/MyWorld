@@ -24,6 +24,7 @@ class Place: NSObject, Codable {
     var position: CLLocationCoordinate2D
     var image: Data?
     var imageName = ""
+    var iconTable = ""
     
    //var coordinate: CLLocationCoordinate2D
     
@@ -35,6 +36,7 @@ class Place: NSObject, Codable {
         case latitude = "latitude"
         case longitude = "longitude"
         case imageName = "imageName"
+        case iconTable = "iconTable"
     }
     required convenience init(from: Decoder) throws {   //whats mean required convenience????
         let container = try from.container(keyedBy: PlaceKeys.self)
@@ -45,15 +47,17 @@ class Place: NSObject, Codable {
         let longitude = try container.decode(CLLocationDegrees.self, forKey: .longitude)
         let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let imageName = try container.decode(String.self, forKey: .imageName)
+        let iconTable = try container.decode(String.self, forKey: .iconTable)
 
-        self.init(name: name, descriptionPlace: descriptionPlace, webAddress: webAddress, position: position, imageName: imageName)
+        self.init(name: name, descriptionPlace: descriptionPlace, webAddress: webAddress, position: position, imageName: imageName, iconTable: iconTable)
     }
-    init (name: String, descriptionPlace: String, webAddress: String, position: CLLocationCoordinate2D, imageName: String){
+    init (name: String, descriptionPlace: String, webAddress: String, position: CLLocationCoordinate2D, imageName: String, iconTable: String){
         self.name = name
         self.descriptionPlace = descriptionPlace
         self.webAddress = webAddress
         self.position = position
         self.imageName = imageName
+        self.iconTable = iconTable
     }
     func encode(to: Encoder) throws {
         var container = to.container(keyedBy: PlaceKeys.self)
@@ -63,6 +67,7 @@ class Place: NSObject, Codable {
         try container.encode(position.latitude, forKey: .latitude)
         try container.encode(position.longitude, forKey: .longitude)
         try container.encode(imageName, forKey: .imageName)
+        try container.encode(iconTable, forKey: .iconTable)
     }
     //...
     
@@ -71,7 +76,7 @@ class Place: NSObject, Codable {
 //        self.id = UUID().uuidString
 //    }
     
-    init(name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String) {
+    init(name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String, iconTable: String) {
         self.id = UUID().uuidString
         self.name = name
         self.descriptionPlace = descriptionPlace
@@ -79,6 +84,7 @@ class Place: NSObject, Codable {
         self.image = image_in
         self.position = position
         self.imageName = imageName
+        self.iconTable = iconTable
     }
     
 //    init(type: PlaceType, name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String) {

@@ -86,7 +86,7 @@
                                             <color key="backgroundColor" red="0.32232483888157881" green="0.62654903098528225" blue="0.8523316062176165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <stackView opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOZ-gT-kB9">
+                                        <stackView opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LOZ-gT-kB9">
                                             <rect key="frame" x="8" y="10" width="398" height="90"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="restaurantBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Gan-TR-c7n">
@@ -96,16 +96,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmK-5B-JmP">
-                                                    <rect key="frame" x="50" y="0.0" width="298" height="90"/>
+                                                    <rect key="frame" x="55" y="0.0" width="313" height="90"/>
                                                     <color key="tintColor" red="0.40000000000000002" green="0.5490196078431373" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="jA1-el-7YI">
-                                                    <rect key="frame" x="348" y="0.0" width="50" height="90"/>
+                                                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="jA1-el-7YI">
+                                                    <rect key="frame" x="373" y="0.0" width="25" height="90"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="PZf-Xe-BET"/>
+                                                        <constraint firstAttribute="width" constant="25" id="PZf-Xe-BET"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -127,6 +127,7 @@
                                 <color key="tintColor" red="0.40000000000000002" green="0.5490196078431373" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="colorBackgroundView" destination="TQ9-5j-gwB" id="3Nn-jq-Gq1"/>
+                                    <outlet property="iconTable" destination="Gan-TR-c7n" id="tnc-Dv-gLc"/>
                                     <outlet property="nameLabel" destination="pmK-5B-JmP" id="y4s-ef-aVH"/>
                                     <segue destination="1aE-WL-xhe" kind="show" identifier="toDetail" id="QoZ-AX-PWn"/>
                                 </connections>
@@ -400,7 +401,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow" width="50" height="50"/>
+        <image name="arrowBlue" width="40" height="40"/>
         <image name="list" width="50" height="50"/>
         <image name="map" width="50" height="50"/>
         <image name="restaurant" width="50" height="50"/>

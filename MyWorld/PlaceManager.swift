@@ -87,20 +87,23 @@ class PlaceManager {
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2),
-              imageName: "UOC 22@"),
+              imageName: "UOC 22@",
+              iconTable: "cultureBlue"),
         Place(name: "Rostisseria Lolita",
               descriptionPlace: "Els millors pollastres de Sant Cugat,de la comarca i dels multiversos coneguts...",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.7, longitude: 2.3),
-              imageName: "Rostisseria Lolita"),
+              imageName: "Rostisseria Lolita",
+              iconTable: "restaurantBlue"),
         Place(name: "CIFO L'hospitalet",
               descriptionPlace: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.1, longitude: 2.5),
-              imageName: "cifo")
-    
+              imageName: "cifo",
+              iconTable: "cultureBlue")
+
         /*
         PlaceTourist(name: "CosmoCaixa",
                      descriptionPlace: "Museu de la Ciència de Barcelona",
@@ -110,4 +113,24 @@ class PlaceManager {
                      discount_tourist: "10%", webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona", image_in: nil)
         */
     ]
+//    var someTestPlaces = [
+//        Place(name: "UOC 22@",
+//              descriptionPlace: "Seu de la Universitat Oberta de Catalunya",
+//              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+//              image_in: nil,
+//              position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2),
+//              imageName: "UOC 22@"),
+//        Place(name: "Rostisseria Lolita",
+//              descriptionPlace: "Els millors pollastres de Sant Cugat,de la comarca i dels multiversos coneguts...",
+//              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+//              image_in: nil,
+//              position: CLLocationCoordinate2D(latitude: 42.7, longitude: 2.3),
+//              imageName: "Rostisseria Lolita"),
+//        Place(name: "CIFO L'hospitalet",
+//              descriptionPlace: "Seu del Centre d'Innovació i Formació per a l'Ocupació",
+//              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+//              image_in: nil,
+//              position: CLLocationCoordinate2D(latitude: 42.1, longitude: 2.5),
+//              imageName: "cifo")
+//    ]
 }

@@ -11,6 +11,7 @@ import UIKit
 class PlaceCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var iconTable: UIImageView!
     @IBOutlet weak var colorBackgroundView: UIView!{
         didSet{
             colorBackgroundView.layer.cornerRadius = 10

@@ -29,6 +29,7 @@ class TableVC: UITableViewController {
         let place = places.itemAt(position: indexPath.item)
         
         cell.nameLabel.text = place?.name
+        cell.iconTable.image = UIImage(named: (place?.iconTable)!)
         
         refresh = true
         
