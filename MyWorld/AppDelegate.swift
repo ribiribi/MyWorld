@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let manager = PlaceManager.shared
-        
+       
         // MARK -------------------------------------- Save and load data
         let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = docsPath.appendingPathComponent("places.json")
