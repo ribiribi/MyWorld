@@ -24,7 +24,7 @@ class EditVC: UIViewController, UITextViewDelegate {
         self.imageEdit?.image = UIImage(named: place.imageName)
         
     }
-    
+    //amb un cop que guardi n'hi ha prou !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     internal func textViewDidChange(_ textView: UITextView){
         for item in self.manager.places {
             if place.id == item.id{

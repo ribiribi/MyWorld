@@ -16,16 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let manager = PlaceManager.shared
         
         // MARK -------------------------------------- Save and load data
-        //Load data
         let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = docsPath.appendingPathComponent("places.json")
         let fileManager = FileManager.default
-        let urlString = "\(filePath)"
+        //let urlString = "\(filePath)"
         
-        //Save data
-        if !(fileManager.fileExists(atPath: urlString)){
+        if !(fileManager.fileExists(atPath: filePath.path)){
+            //If don't exist the file, we create it with test information.
             manager.saveJsonToFile(origin: manager.someTestPlaces)
         }
+        //Load data
         do{
             let jasonData = try Data(contentsOf: filePath)
             let places = manager.placesFrom(jsonData: jasonData)
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 manager.append(place)
             }
         } catch {
-            
+            print ("Error saving to local file")
         }
         return true
     }
