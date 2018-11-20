@@ -13,6 +13,7 @@ var refresh = false
 class DetailVC: UIViewController {
 
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var arrowBlue: UIImageView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet var detailView: UIView!    
     @IBOutlet weak var webAddress: UILabel!
@@ -26,6 +27,7 @@ class DetailVC: UIViewController {
         name?.text = place.name
         image?.image = UIImage(named: place.name)
         webAddress?.text = place.webAddress
+        
         
         //descriptionLabel?.text = place?.description
         
