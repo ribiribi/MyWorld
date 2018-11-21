@@ -16,7 +16,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var arrowBlue: UIImageView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet var detailView: UIView!    
-    @IBOutlet weak var webAddress: UILabel!
+    @IBOutlet weak var webAddress: UITextView!
     
     let places = PlaceManager.shared
     var place: Place!
