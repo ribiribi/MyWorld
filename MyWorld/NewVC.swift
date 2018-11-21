@@ -44,38 +44,52 @@ class NewVC: UIViewController, UITextViewDelegate {
         self.animateViewMoving(up: false, moveValue: 100)
     }
     
-    internal func textViewDidChange(_ textView: UITextView){
-        //Save into manager
-        if refresh == false{
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParent {
+            //Save into manager
             place?.name = nameNew.text
             place?.descriptionPlace = descriptionNew.text
             place?.webAddress = webAddressNew.text
             place?.imageName = "UOC 22@"
             manager.append(place)
-            
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
-
-            refresh = true
         }
-        else {
-            last = manager.count()
-            last -= 1
-            place = manager.itemAt(position: last)
-            print (manager.count())
-            for item in self.manager.places {
-                if place?.id == item.id{
-                    place?.name = nameNew.text
-                    place?.descriptionPlace = descriptionNew.text
-                    place?.webAddress = webAddressNew.text
-                    place?.imageName = "UOC 22@"
-                    
-                    manager.saveJsonToFile(origin: manager.places)
-                }
-            }
-            
-        }
-        
-        
     }
+    
+//    internal func textViewDidChange(_ textView: UITextView){
+//        //Save into manager
+//        if refresh == false{
+//            place?.name = nameNew.text
+//            place?.descriptionPlace = descriptionNew.text
+//            place?.webAddress = webAddressNew.text
+//            place?.imageName = "UOC 22@"
+//            manager.append(place)
+//
+//            //Save into file
+//            manager.saveJsonToFile(origin: manager.places)
+//
+//            refresh = true
+//        }
+//        else {
+//            last = manager.count()
+//            last -= 1
+//            place = manager.itemAt(position: last)
+//            for item in self.manager.places {
+//                if place?.id == item.id{
+//                    place?.name = nameNew.text
+//                    place?.descriptionPlace = descriptionNew.text
+//                    place?.webAddress = webAddressNew.text
+//                    place?.imageName = "UOC 22@"
+//
+//                    manager.saveJsonToFile(origin: manager.places)
+//                }
+//            }
+//
+//        }
+//
+//
+//    }
 }
