@@ -152,10 +152,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="xbf-R9-BVo">
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="xbf-R9-BVo">
                                 <rect key="frame" x="10" y="74" width="300" height="240"/>
+                                <color key="tintColor" red="0.41176470588235292" green="0.54117647058823526" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="dxt-QW-TYN">
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="dxt-QW-TYN">
                                 <rect key="frame" x="260" y="74" width="60" height="240"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-6t-432">
@@ -253,7 +254,7 @@
         <scene sceneID="xy0-BZ-7WO">
             <objects>
                 <viewController id="kTy-uu-9gw" customClass="DescriptionVC" customModule="MyWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="klH-V4-Yiw">
+                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" id="klH-V4-Yiw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -447,7 +448,7 @@
         <image name="restaurantBlue" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pLH-nR-Psy"/>
+        <segue reference="x5t-Ar-Ght"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.30588235294117649" green="0.48627450980392156" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
