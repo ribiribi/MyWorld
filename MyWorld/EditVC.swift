@@ -28,13 +28,6 @@ class EditVC: UIViewController, UITextViewDelegate {
         self.webAddressEdit?.text = place.webAddress
     }
     // MARK: --------------------------------------------------Functions
-    internal func textViewDidBeginEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: true, moveValue: 100)
-    }
-    internal func textViewDidEndEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: false, moveValue: 100)
-    }
-    
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3
         let movement:CGFloat = ( up ? -moveValue : moveValue)
@@ -45,11 +38,21 @@ class EditVC: UIViewController, UITextViewDelegate {
         UIView.commitAnimations()
     }
     
+    internal func textViewDidBeginEditing(_ textView: UITextView) {
+        self.animateViewMoving(up: true, moveValue: 100)
+    }
+    internal func textViewDidEndEditing(_ textView: UITextView) {
+        self.animateViewMoving(up: false, moveValue: 100)
+    }
+
+    
     internal func textViewDidChange(_ textView: UITextView){
         for item in self.manager.places {
             if place.id == item.id{
                 //Save into manager
                 place.name = nameEdit.text
+                place.descriptionPlace = descriptionEdit.text
+                place.webAddress = webAddressEdit.text
                 
                 //Save into file
                 manager.saveJsonToFile(origin: manager.places)
