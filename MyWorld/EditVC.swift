@@ -13,6 +13,7 @@ class EditVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var nameEdit: UITextView!
     @IBOutlet weak var descriptionEdit: UITextView!
+    @IBOutlet weak var webAddressEdit: UITextView!
     
     var toNameEdit = ""
     let manager = PlaceManager.shared
@@ -22,7 +23,9 @@ class EditVC: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         self.nameEdit?.text = place.name
-        self.imageEdit?.image = UIImage(named: place.imageName)        
+        self.imageEdit?.image = UIImage(named: place.imageName)
+        self.descriptionEdit?.text = place.descriptionPlace
+        self.webAddressEdit?.text = place.webAddress
     }
     //amb un cop que guardi n'hi ha prou !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     internal func textViewDidChange(_ textView: UITextView){

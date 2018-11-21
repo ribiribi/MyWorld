@@ -104,12 +104,19 @@ class PlaceManager {
               imageName: "cifo",
               iconTable: "cultureBlue"),
         Place(name: "Out of china",
-              descriptionPlace: "Millor restaurant chines de Barcelona. Amb tocs de cuina fusió catalana, ambient acollidor. Reservar sempre, doncs aqeust es un dels seus punts fluixos: l'ambient respira un xic d'estress.",
+              descriptionPlace: "Millor restaurant chines de Barcelona. Amb tocs de cuina fusió catalana, ambient acollidor. Reservar sempre: un dels punts més fluixos es l'ambient que respira un xic d'estres.",
               webAddress: "http://www.outofchinabarcelona.com/",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 42.1, longitude: 2.5),
               imageName: "outOfChina",
-              iconTable: "restaurantBlue")
+              iconTable: "restaurantBlue"),
+        Place(name: "CosmoCaixa",
+              descriptionPlace: "Museu de la Ciència de Barcelona",
+              webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
+              image_in: nil,
+              position: CLLocationCoordinate2D(latitude: 42.1, longitude: 2.5),
+              imageName: "CosmoCaixa",
+              iconTable: "museumBlue"),
 
         /*
         PlaceTourist(name: "CosmoCaixa",
