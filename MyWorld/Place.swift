@@ -72,8 +72,10 @@ class Place: NSObject, Codable {
     //...
     
     //MARK: - Inits
-//    init() {
-//        self.id = UUID().uuidString
+//    init(name: String, descriptionPlace: String, webAddress: String) {
+//        self.name = name
+//        self.descriptionPlace = descriptionPlace
+//        self.webAddress = webAddress
 //    }
     
     init(name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String, iconTable: String) {

@@ -77,6 +77,7 @@
 				092E221521999652008579CA /* DetailVC.swift */,
 				09240C14219D53CF0087E566 /* DescriptionVC.swift */,
 				0915F658219DCDB300EE640E /* EditVC.swift */,
+				090D923D21A5C2D800F92021 /* NewVC.swift */,
 				09EC90B121A1651F0091450F /* MapVC.swift */,
 				098358EF219833C200503202 /* Assets.xcassets */,
 				092E220F21998992008579CA /* Place.swift */,
@@ -86,7 +87,6 @@
 				098358F1219833C200503202 /* LaunchScreen.storyboard */,
 				098358F4219833C200503202 /* Info.plist */,
 				098358EC219833C100503202 /* MyWorld.xcdatamodeld */,
-				090D923D21A5C2D800F92021 /* NewVC.swift */,
 			);
 			path = MyWorld;
 			sourceTree = "<group>";

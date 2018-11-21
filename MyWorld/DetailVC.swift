@@ -69,6 +69,11 @@ class DetailVC: UIViewController {
             editVC.place = place
            
         }
+        if segue.identifier == "toNew"{
+            let newVC = segue.destination as! NewVC
+            newVC.place = place
+            
+        }
     }
     
     @objc func swipeView(_ sender : UISwipeGestureRecognizer){

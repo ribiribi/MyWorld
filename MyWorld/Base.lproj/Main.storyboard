@@ -40,7 +40,7 @@
                     <tabBarItem key="tabBarItem" title="" image="list" selectedImage="list" id="qp6-tE-yBM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="eou-gs-ifX">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.30588235294117649" green="0.48627450980392156" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -492,6 +492,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="oxS-47-bYb" id="Wag-zF-MOM"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                     </stackView>
@@ -512,6 +515,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="oxS-47-bYb" id="gjv-zq-R9z"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                         <constraints>
@@ -535,6 +541,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="oxS-47-bYb" id="l3E-vL-83a"/>
+                                                </connections>
                                             </textView>
                                         </subviews>
                                         <constraints>
@@ -555,6 +564,11 @@
                         <viewLayoutGuide key="safeArea" id="dDW-sA-P0N"/>
                     </view>
                     <navigationItem key="navigationItem" title="New" id="9ns-Pu-axK"/>
+                    <connections>
+                        <outlet property="descriptionNew" destination="3z6-An-2Y2" id="2tt-IX-yYe"/>
+                        <outlet property="nameNew" destination="3Nc-2f-D7U" id="cjU-gO-J31"/>
+                        <outlet property="webAddressNew" destination="Rzo-hm-GK6" id="l5K-aV-kkO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U13-a8-wvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
