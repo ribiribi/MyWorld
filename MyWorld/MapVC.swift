@@ -17,7 +17,7 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let region = MKCoordinateRegion(center: manager.places[1].coordinate, latitudinalMeters: 100_000, longitudinalMeters: 100_000)
+        let region = MKCoordinateRegion(center: manager.places[1].coordinate, latitudinalMeters: 10_000, longitudinalMeters: 10_000)
         mapView.setRegion(region, animated: true)
         
         for item in manager.places {
