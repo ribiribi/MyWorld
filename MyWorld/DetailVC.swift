@@ -28,10 +28,6 @@ class DetailVC: UIViewController {
         image?.image = UIImage(named: place.name)
         webAddress?.text = place.webAddress
         
-        
-        //descriptionLabel?.text = place?.description
-        
-        
         //MARK: --------------------------------------- Slide to description view
         var swipeGesture  = UISwipeGestureRecognizer()
         
@@ -53,10 +49,8 @@ class DetailVC: UIViewController {
             name?.text = place.name
             webAddress?.text = place.webAddress
             image?.image = UIImage(named: place.imageName)
-            
         }
     }
-    
     
     // MARK: ---------------------------------------  Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,9 +76,6 @@ class DetailVC: UIViewController {
                 self.detailView.frame = CGRect(x: self.view.frame.size.width - self.detailView.frame.size.width, y: self.detailView.frame.origin.y , width: self.detailView.frame.size.width, height: self.detailView.frame.size.height)
                 self.performSegue(withIdentifier: "toDescription", sender: UIView())
             }
-//            else if {
-//                  intentar fer un undwind
-//            }
             self.detailView.layoutIfNeeded()
             self.detailView.setNeedsDisplay()
         }

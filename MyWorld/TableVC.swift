@@ -17,8 +17,6 @@ class TableVC: UITableViewController {
         super.viewDidLoad()
     }
     
-   
-
     // MARK: --------------------------------- Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count()
@@ -31,8 +29,7 @@ class TableVC: UITableViewController {
         cell.nameLabel.text = place?.name
         cell.iconTable.image = UIImage(named: (place?.iconTable)!)
         
-        refresh = true
-        
+        refresh = true        
         return cell
     }
     

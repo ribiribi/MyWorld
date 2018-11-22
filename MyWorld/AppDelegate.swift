@@ -19,12 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = docsPath.appendingPathComponent("places.json")
         let fileManager = FileManager.default
-        //let urlString = "\(filePath)"
         
+        //------------Treure la linia fora de l'if per ressetejar les dades
         if !(fileManager.fileExists(atPath: filePath.path)){
             //If don't exist the file, we create it with test information.
             manager.saveJsonToFile(origin: manager.someTestPlaces)
         }
+            
         //Load data
         do{
             let jasonData = try Data(contentsOf: filePath)

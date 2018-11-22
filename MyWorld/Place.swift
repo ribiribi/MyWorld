@@ -26,8 +26,6 @@ class Place: NSObject, Codable {
     var imageName = ""
     var iconTable = ""
     
-   //var coordinate: CLLocationCoordinate2D
-    
     //If we want work with Codable protocol...
     enum PlaceKeys: String, CodingKey {
         case name = "name"
