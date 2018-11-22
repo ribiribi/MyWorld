@@ -43,11 +43,11 @@ class NewVC: UIViewController, UITextViewDelegate {
     }
     
     internal func textViewDidBeginEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: true, moveValue: 100)
+        self.animateViewMoving(up: true, moveValue: 110)
     }
     
     internal func textViewDidEndEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: false, moveValue: 100)
+        self.animateViewMoving(up: false, moveValue: 110)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +60,7 @@ class NewVC: UIViewController, UITextViewDelegate {
             manager.places[countNum].descriptionPlace = descriptionNew.text
             manager.places[countNum].webAddress = webAddressNew.text
             manager.places[countNum].imageName = "modernBuilding"
+            manager.places[countNum].iconTable = "newBlue"
             
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
