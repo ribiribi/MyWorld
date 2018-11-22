@@ -7,21 +7,29 @@
 //
 
 import UIKit
+import MapKit
 
 class NewVC: UIViewController, UITextViewDelegate {
 
     let manager = PlaceManager.shared
-    var place: Place!
-    var refresh = false
-    var last = 0
     
+    var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "")
+    
+    var countNum = 0
     
     @IBOutlet weak var nameNew: UITextView!
     @IBOutlet weak var descriptionNew: UITextView!
     @IBOutlet weak var webAddressNew: UITextView!
+    @IBOutlet weak var imageNew: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.nameNew?.text = "write the new name"
+        self.imageNew?.image = UIImage(named: "modernBuilding")
+        self.descriptionNew?.text = "write the description"
+        self.webAddressNew.text = "write the web address"
     }
     
     // MARK: --------------------------------------------------Functions
@@ -49,47 +57,17 @@ class NewVC: UIViewController, UITextViewDelegate {
         
         if self.isMovingFromParent {
             //Save into manager
-            place?.name = nameNew.text
-            place?.descriptionPlace = descriptionNew.text
-            place?.webAddress = webAddressNew.text
-            place?.imageName = "UOC 22@"
+            countNum = manager.count()
+            //Si venim de editar no trovo la manera de que només m'escrigui a la row que acavem de crear. Sempre reescriu també la que es sel.lecciona
             manager.append(place)
+            manager.places[countNum].name = nameNew.text
+            manager.places[countNum].descriptionPlace = descriptionNew.text
+            manager.places[countNum].webAddress = webAddressNew.text
+            manager.places[countNum].imageName = "modernBuilding"
+            
+            
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
         }
     }
-    
-//    internal func textViewDidChange(_ textView: UITextView){
-//        //Save into manager
-//        if refresh == false{
-//            place?.name = nameNew.text
-//            place?.descriptionPlace = descriptionNew.text
-//            place?.webAddress = webAddressNew.text
-//            place?.imageName = "UOC 22@"
-//            manager.append(place)
-//
-//            //Save into file
-//            manager.saveJsonToFile(origin: manager.places)
-//
-//            refresh = true
-//        }
-//        else {
-//            last = manager.count()
-//            last -= 1
-//            place = manager.itemAt(position: last)
-//            for item in self.manager.places {
-//                if place?.id == item.id{
-//                    place?.name = nameNew.text
-//                    place?.descriptionPlace = descriptionNew.text
-//                    place?.webAddress = webAddressNew.text
-//                    place?.imageName = "UOC 22@"
-//
-//                    manager.saveJsonToFile(origin: manager.places)
-//                }
-//            }
-//
-//        }
-//
-//
-//    }
 }

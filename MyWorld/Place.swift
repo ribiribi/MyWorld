@@ -51,14 +51,7 @@ class Place: NSObject, Codable {
 
         self.init(name: name, descriptionPlace: descriptionPlace, webAddress: webAddress, position: position, imageName: imageName, iconTable: iconTable)
     }
-    init (name: String, descriptionPlace: String, webAddress: String, position: CLLocationCoordinate2D, imageName: String, iconTable: String){
-        self.name = name
-        self.descriptionPlace = descriptionPlace
-        self.webAddress = webAddress
-        self.position = position
-        self.imageName = imageName
-        self.iconTable = iconTable
-    }
+
     func encode(to: Encoder) throws {
         var container = to.container(keyedBy: PlaceKeys.self)
         try container.encode(name, forKey: .name)
@@ -72,11 +65,6 @@ class Place: NSObject, Codable {
     //...
     
     //MARK: - Inits
-//    init(name: String, descriptionPlace: String, webAddress: String) {
-//        self.name = name
-//        self.descriptionPlace = descriptionPlace
-//        self.webAddress = webAddress
-//    }
     
     init(name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String, iconTable: String) {
         self.id = UUID().uuidString
@@ -89,16 +77,14 @@ class Place: NSObject, Codable {
         self.iconTable = iconTable
     }
     
-//    init(type: PlaceType, name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String) {
-//        self.id = UUID().uuidString
-//        //self.type = type
-//        self.name = name
-//        self.descriptionPlace = descriptionPlace
-//        self.webAddress = webAddress
-//        self.image = image_in
-//        self.position = position
-//        self.imageName = imageName
-//    }
+    init (name: String, descriptionPlace: String, webAddress: String, position: CLLocationCoordinate2D, imageName: String, iconTable: String){
+        self.name = name
+        self.descriptionPlace = descriptionPlace
+        self.webAddress = webAddress
+        self.position = position
+        self.imageName = imageName
+        self.iconTable = iconTable
+    }
 }
 
 //Extension required by MKAnnotation
