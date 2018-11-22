@@ -40,7 +40,7 @@
                     <tabBarItem key="tabBarItem" title="" image="list" selectedImage="list" id="qp6-tE-yBM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="eou-gs-ifX">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.30588235294117649" green="0.48627450980392156" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,7 +62,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnh-jW-ihl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="-132.68365817091455"/>
+            <point key="canvasLocation" x="812" y="-203"/>
         </scene>
         <!--TableVC-->
         <scene sceneID="rvl-ew-OxZ">
@@ -148,7 +148,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OB-mr-ErQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="-133.5832083958021"/>
+            <point key="canvasLocation" x="1569" y="-204"/>
         </scene>
         <!--Detail-->
         <scene sceneID="aNb-bu-mXp">
@@ -204,20 +204,12 @@
                         <viewLayoutGuide key="safeArea" id="QVD-4K-bB0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="hEa-g7-1f9">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="edit" id="xnH-oq-Dym">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="rZE-Y7-a9L" kind="show" identifier="toEdit" id="x5t-Ar-Ght"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="BlR-Xd-fQz">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="oxS-47-bYb" kind="show" identifier="toNew" id="fhv-fh-WZ4"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="xnH-oq-Dym">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="rZE-Y7-a9L" kind="show" identifier="toEdit" id="x5t-Ar-Ght"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="arrowBlue" destination="dxt-QW-TYN" id="ad1-hh-xph"/>
@@ -230,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmt-8h-Pq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324.6376811594205" y="-133.69565217391306"/>
+            <point key="canvasLocation" x="2408" y="-205"/>
         </scene>
         <!--Description-->
         <scene sceneID="xy0-BZ-7WO">
@@ -241,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRb-6D-KDd">
-                                <rect key="frame" x="32" y="100.5" width="256" height="294"/>
+                                <rect key="frame" x="16" y="100.5" width="288" height="294"/>
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.58431372549019611" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -258,7 +250,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BRb-6D-KDd" firstAttribute="height" secondItem="n5C-Qh-Bnb" secondAttribute="height" multiplier="0.8" id="Cv4-jC-3JO"/>
-                            <constraint firstItem="BRb-6D-KDd" firstAttribute="width" secondItem="n5C-Qh-Bnb" secondAttribute="width" multiplier="0.8" id="Oja-v3-cW6"/>
+                            <constraint firstItem="BRb-6D-KDd" firstAttribute="width" secondItem="n5C-Qh-Bnb" secondAttribute="width" multiplier="0.9" id="Oja-v3-cW6"/>
                             <constraint firstItem="BRb-6D-KDd" firstAttribute="centerY" secondItem="n5C-Qh-Bnb" secondAttribute="centerY" id="TBa-cE-0es"/>
                             <constraint firstItem="BRb-6D-KDd" firstAttribute="top" secondItem="x8C-jG-VaB" secondAttribute="bottom" constant="10" id="Z8B-U1-70p"/>
                             <constraint firstItem="n5C-Qh-Bnb" firstAttribute="trailing" secondItem="x8C-jG-VaB" secondAttribute="trailing" constant="150" id="cRv-jG-Cj0"/>
@@ -267,20 +259,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n5C-Qh-Bnb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Description" id="Kdi-Gw-d0f">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Tdb-es-fmK">
-                            <connections>
-                                <segue destination="rZE-Y7-a9L" kind="show" id="pLH-nR-Psy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Description" id="Kdi-Gw-d0f"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="BRb-6D-KDd" id="CYf-71-OVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiC-5l-fj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3112.5" y="-477.5"/>
+            <point key="canvasLocation" x="3165" y="-205"/>
         </scene>
         <!--Edit-->
         <scene sceneID="7Js-yP-ui6">
@@ -405,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwb-Cj-g3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3895.652173913044" y="-476.9021739130435"/>
+            <point key="canvasLocation" x="3165" y="650"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PsD-g5-Aua">
@@ -424,7 +410,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGd-UD-6az" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="533.88305847076469"/>
+            <point key="canvasLocation" x="812" y="650"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="u9q-io-6qq">
@@ -454,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erE-zq-ffj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="534"/>
+            <point key="canvasLocation" x="1571" y="650"/>
         </scene>
         <!--New-->
         <scene sceneID="Doi-ZX-5ot">
@@ -579,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U13-a8-wvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3113" y="269"/>
+            <point key="canvasLocation" x="2408" y="-998"/>
         </scene>
     </scenes>
     <resources>
@@ -589,9 +575,5 @@
         <image name="restaurant" width="50" height="50"/>
         <image name="restaurantBlue" width="40" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ny0-un-yQi"/>
-        <segue reference="x5t-Ar-Ght"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.30588235294117649" green="0.48627450980392156" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fileManager = FileManager.default
         //let urlString = "\(filePath)"
         
-        //if !(fileManager.fileExists(atPath: filePath.path)){
+        if !(fileManager.fileExists(atPath: filePath.path)){
             //If don't exist the file, we create it with test information.
             manager.saveJsonToFile(origin: manager.someTestPlaces)
-        //}
+        }
         //Load data
         do{
             let jasonData = try Data(contentsOf: filePath)

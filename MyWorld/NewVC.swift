@@ -12,9 +12,7 @@ import MapKit
 class NewVC: UIViewController, UITextViewDelegate {
 
     let manager = PlaceManager.shared
-    
     var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "")
-    
     var countNum = 0
     
     @IBOutlet weak var nameNew: UITextView!
@@ -54,17 +52,14 @@ class NewVC: UIViewController, UITextViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         if self.isMovingFromParent {
             //Save into manager
             countNum = manager.count()
-            //Si venim de editar no trovo la manera de que només m'escrigui a la row que acavem de crear. Sempre reescriu també la que es sel.lecciona
             manager.append(place)
             manager.places[countNum].name = nameNew.text
             manager.places[countNum].descriptionPlace = descriptionNew.text
             manager.places[countNum].webAddress = webAddressNew.text
             manager.places[countNum].imageName = "modernBuilding"
-            
             
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
