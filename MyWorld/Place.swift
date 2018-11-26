@@ -16,7 +16,7 @@ final class Place: NSObject, Codable {
         case touristic
     }
     
-    var pickerViewArray = ["cultureBlue", "restaurantBlue","museumBlue","pizzaBlue"]
+    var pickerViewArray = ["defaultBlue", "cultureBlue", "restaurantBlue","museumBlue","pizzaBlue"]
     var id = ""
     //var type = PlaceType.generic
     var name = ""

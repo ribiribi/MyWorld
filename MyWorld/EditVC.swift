@@ -16,7 +16,7 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     @IBOutlet weak var webAddressEdit: UITextView!
     @IBOutlet weak var pickerViewEdit: UIPickerView!
     
-    var toNameEdit = ""
+    //var toNameEdit = ""
     let manager = PlaceManager.shared
     var place: Place!
     
@@ -27,15 +27,35 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.imageEdit?.image = UIImage(named: place.imageName)
         self.descriptionEdit?.text = place.descriptionPlace
         self.webAddressEdit?.text = place.webAddress
+        
+        pickerViewEdit.selectRow(0, inComponent: 0, animated: true)
     }
     // MARK: --------------------------------------------------Functions
+    //PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-        
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return place.pickerViewArray.count
+    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = place.pickerViewArray[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+        return myTitle
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        for item in self.manager.places {
+            if place.id == item.id{
+                //Save into manager
+                place.name = nameEdit.text
+                place.descriptionPlace = descriptionEdit.text
+                place.webAddress = webAddressEdit.text
+                place.iconTable = place.pickerViewArray[row]
+                
+                //Save into file
+                manager.saveJsonToFile(origin: manager.places)
+            }
+        }
     }
     
     //Hide the iPhone keyboard
@@ -48,15 +68,12 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.view.frame = self.view.frame.offsetBy(dx:0, dy: movement)
         UIView.commitAnimations()
     }
-    
     internal func textViewDidBeginEditing(_ textView: UITextView) {
         self.animateViewMoving(up: true, moveValue: 100)
     }
-    
     internal func textViewDidEndEditing(_ textView: UITextView) {
         self.animateViewMoving(up: false, moveValue: 100)
     }
-    
     internal func textViewDidChange(_ textView: UITextView){
         for item in self.manager.places {
             if place.id == item.id{
