@@ -8,12 +8,13 @@
 
 import UIKit
 
-class EditVC: UIViewController, UITextViewDelegate {
+class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
 
     @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var nameEdit: UITextView!
     @IBOutlet weak var descriptionEdit: UITextView!
     @IBOutlet weak var webAddressEdit: UITextView!
+    @IBOutlet weak var pickerViewEdit: UIPickerView!
     
     var toNameEdit = ""
     let manager = PlaceManager.shared
@@ -28,6 +29,15 @@ class EditVC: UIViewController, UITextViewDelegate {
         self.webAddressEdit?.text = place.webAddress
     }
     // MARK: --------------------------------------------------Functions
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return place.pickerViewArray.count
+    }
+    
     //Hide the iPhone keyboard
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3
