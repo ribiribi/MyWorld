@@ -51,6 +51,7 @@ class DetailVC: UIViewController {
             name?.text = place.name
             webAddress?.text = place.webAddress
             image?.image = UIImage(named: place.imageName)
+            iconDetail?.image = UIImage(named: place.iconTable)
         }
     }
     

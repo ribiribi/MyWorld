@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class NewVC: UIViewController, UITextViewDelegate {
+class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     let manager = PlaceManager.shared
     var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "")
@@ -19,7 +19,8 @@ class NewVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var descriptionNew: UITextView!
     @IBOutlet weak var webAddressNew: UITextView!
     @IBOutlet weak var imageNew: UIImageView!
-
+    @IBOutlet weak var pikerViewNew: UIPickerView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,26 @@ class NewVC: UIViewController, UITextViewDelegate {
         self.imageNew?.image = UIImage(named: "modernBuilding")
         self.descriptionNew?.text = "write the description"
         self.webAddressNew.text = "write the web address"
+        place.iconTable = "defaultBlue"
     }
     
     // MARK: --------------------------------------------------Functions
+    //PickerView functions
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return place.pickerViewArray.count
+    }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = place.pickerViewArray[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+        return myTitle
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        place.iconTable = place.pickerViewArray[row]
+    }
+
     //Hide the iPhone keyboard
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3
@@ -60,7 +78,6 @@ class NewVC: UIViewController, UITextViewDelegate {
             manager.places[countNum].descriptionPlace = descriptionNew.text
             manager.places[countNum].webAddress = webAddressNew.text
             manager.places[countNum].imageName = "modernBuilding"
-            manager.places[countNum].iconTable = "defaultBlue"
             
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
