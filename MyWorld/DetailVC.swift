@@ -17,6 +17,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet var detailView: UIView!    
     @IBOutlet weak var webAddress: UITextView!
+    @IBOutlet weak var iconDetail: UIImageView!
     
     let places = PlaceManager.shared
     var place: Place!
@@ -27,8 +28,9 @@ class DetailVC: UIViewController {
         name?.text = place.name
         image?.image = UIImage(named: place.name)
         webAddress?.text = place.webAddress
+        iconDetail?.image = UIImage(named: place.iconTable)
         
-        //MARK: --------------------------------------- Slide to description view
+    //MARK: --------------------------------------- Slide to description view
         var swipeGesture  = UISwipeGestureRecognizer()
         
         let directions: [UISwipeGestureRecognizer.Direction] = [.up, .down, .right, .left]

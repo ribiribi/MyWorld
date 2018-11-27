@@ -160,24 +160,38 @@
                             <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="dxt-QW-TYN">
                                 <rect key="frame" x="275" y="74" width="45" height="240"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-6t-432">
-                                <rect key="frame" x="10" y="324" width="300" height="27"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-6t-432">
+                                <rect key="frame" x="10" y="324" width="300" height="87"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuR-Su-pnP">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="www.google.com" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p6e-rI-0sd">
-                                        <rect key="frame" x="0.0" y="27" width="300" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="32" width="300" height="23"/>
                                         <color key="backgroundColor" red="0.36862745098039218" green="0.51372549019607838" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                     </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npb-qo-TIf">
+                                        <rect key="frame" x="0.0" y="64" width="70" height="23"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1v-Ol-yCz">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="bmK-oR-eJo"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="p6e-rI-0sd" secondAttribute="trailing" id="HgE-5c-VQe"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.36862745098039218" green="0.51764705882352946" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -191,7 +205,7 @@
                             <constraint firstItem="xbf-R9-BVo" firstAttribute="leading" secondItem="QVD-4K-bB0" secondAttribute="leading" constant="10" id="KWf-4L-0i6"/>
                             <constraint firstItem="xbf-R9-BVo" firstAttribute="top" secondItem="QVD-4K-bB0" secondAttribute="top" constant="10" id="Kxd-DW-hfH"/>
                             <constraint firstItem="dxt-QW-TYN" firstAttribute="height" secondItem="xbf-R9-BVo" secondAttribute="height" id="MCc-2p-9uZ"/>
-                            <constraint firstItem="QVD-4K-bB0" firstAttribute="bottom" secondItem="5Ug-6t-432" secondAttribute="bottom" constant="80" id="NVd-mo-rRs"/>
+                            <constraint firstItem="QVD-4K-bB0" firstAttribute="bottom" secondItem="5Ug-6t-432" secondAttribute="bottom" constant="20" id="NVd-mo-rRs"/>
                             <constraint firstItem="QVD-4K-bB0" firstAttribute="trailing" secondItem="xbf-R9-BVo" secondAttribute="trailing" constant="10" id="RZC-xb-hAn"/>
                             <constraint firstItem="dxt-QW-TYN" firstAttribute="width" secondItem="xbf-R9-BVo" secondAttribute="width" multiplier="0.15" id="bU7-LC-nU6"/>
                             <constraint firstItem="5Ug-6t-432" firstAttribute="leading" secondItem="QVD-4K-bB0" secondAttribute="leading" constant="10" id="ruW-Ug-4QA"/>
@@ -209,6 +223,7 @@
                     <connections>
                         <outlet property="arrowBlue" destination="dxt-QW-TYN" id="ad1-hh-xph"/>
                         <outlet property="detailView" destination="1q5-D9-z98" id="8J4-eZ-M1l"/>
+                        <outlet property="iconDetail" destination="d1v-Ol-yCz" id="qc2-wg-uEb"/>
                         <outlet property="image" destination="xbf-R9-BVo" id="YRo-Jx-DFO"/>
                         <outlet property="name" destination="cuR-Su-pnP" id="yLA-2a-ttv"/>
                         <outlet property="webAddress" destination="p6e-rI-0sd" id="aeo-1T-5Rr"/>

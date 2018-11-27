@@ -15,12 +15,10 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     @IBOutlet weak var descriptionEdit: UITextView!
     @IBOutlet weak var webAddressEdit: UITextView!
     @IBOutlet weak var pickerViewEdit: UIPickerView!
-    
-    //var toNameEdit = ""
+
     let manager = PlaceManager.shared
     var place: Place!
-    var initialIcon = 0
-    
+    //var initialIcon = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +27,18 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.imageEdit?.image = UIImage(named: place.imageName)
         self.descriptionEdit?.text = place.descriptionPlace
         self.webAddressEdit?.text = place.webAddress
-        
-        initialIcon = place.pickerViewArray.index(of: place.iconTable)!
-        pickerViewEdit.selectRow(initialIcon, inComponent: 0, animated: true)
+        //Load the pickerView
+        if let initialIcon = place.pickerViewArray.index(of: place.iconTable){
+            pickerViewEdit.selectRow(initialIcon, inComponent: 0, animated: true)
+        }
+        else{
+            pickerViewEdit.selectRow(0, inComponent: 0, animated: true)
+        }
         
     }
+    
     // MARK: --------------------------------------------------Functions
-    //PickerView
+    //PickerView functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

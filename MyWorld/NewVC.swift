@@ -60,7 +60,7 @@ class NewVC: UIViewController, UITextViewDelegate {
             manager.places[countNum].descriptionPlace = descriptionNew.text
             manager.places[countNum].webAddress = webAddressNew.text
             manager.places[countNum].imageName = "modernBuilding"
-            manager.places[countNum].iconTable = "newBlue"
+            manager.places[countNum].iconTable = "defaultBlue"
             
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
