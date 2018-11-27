@@ -19,6 +19,8 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     //var toNameEdit = ""
     let manager = PlaceManager.shared
     var place: Place!
+    var initialIcon = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,9 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.descriptionEdit?.text = place.descriptionPlace
         self.webAddressEdit?.text = place.webAddress
         
-        pickerViewEdit.selectRow(0, inComponent: 0, animated: true)
+        initialIcon = place.pickerViewArray.index(of: place.iconTable)!
+        pickerViewEdit.selectRow(initialIcon, inComponent: 0, animated: true)
+        
     }
     // MARK: --------------------------------------------------Functions
     //PickerView
