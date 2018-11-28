@@ -15,6 +15,9 @@ class TableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //long press recognizer
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(longPressGestureRecognizer:)))
+        tableView.addGestureRecognizer(longPress)
     }
     
     // MARK: --------------------------------- Table view data source
@@ -48,6 +51,17 @@ class TableVC: UITableViewController {
     override func viewDidAppear(_ animated: Bool){
         if refresh == true {
             self.tableView.reloadData()
+        }
+    }
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+            print ("long press")
+            let touchPoint = longPressGestureRecognizer.location(in: self.view)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+
+                // your code here, get the row for the indexPath or do whatever you want
+            }
         }
     }
 }

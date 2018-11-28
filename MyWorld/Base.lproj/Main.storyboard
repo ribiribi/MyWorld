@@ -35,7 +35,7 @@
                     <tabBarItem key="tabBarItem" title="" image="list" selectedImage="list" id="qp6-tE-yBM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="eou-gs-ifX">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.30588235294117649" green="0.48627450980392156" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,6 +120,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.5490196078431373" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.40000000000000002" green="0.5490196078431373" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="colorBackgroundView" destination="TQ9-5j-gwB" id="3Nn-jq-Gq1"/>
                                     <outlet property="iconTable" destination="Gan-TR-c7n" id="tnc-Dv-gLc"/>
@@ -142,6 +143,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OB-mr-ErQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="JXB-zw-f3w"/>
             </objects>
             <point key="canvasLocation" x="1569" y="-204"/>
         </scene>
