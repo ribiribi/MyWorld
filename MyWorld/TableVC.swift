@@ -15,6 +15,7 @@ class TableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //long press recognizer
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(longPressGestureRecognizer:)))
         tableView.addGestureRecognizer(longPress)
@@ -54,13 +55,13 @@ class TableVC: UITableViewController {
         }
     }
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
-
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
-            print ("long press")
+            
+            
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
 
-                // your code here, get the row for the indexPath or do whatever you want
+                self.performSegue(withIdentifier: "toPopUpDelete", sender: UIView())
             }
         }
     }
