@@ -47,6 +47,15 @@ class TableVC: UITableViewController {
             let elementDetailVC = segue.destination as! DetailVC
             elementDetailVC.place = place
         }
+        if segue.identifier == "toPopUpDelete" {
+            
+            let cell = sender as! PlaceCell
+            let index = tableView.indexPath(for: cell)!.row
+            //let place = places.someTestPlaces[index]
+            let place = places.places[index]
+            let elementTableVC = segue.destination as! DeleteVC
+            elementTableVC.place = place
+        }
     }
     //MARK: -----------------------------------Refresh
     override func viewDidAppear(_ animated: Bool){
@@ -56,12 +65,10 @@ class TableVC: UITableViewController {
     }
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
-            
-            
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-
-                self.performSegue(withIdentifier: "toPopUpDelete", sender: UIView())
+//                self.performSegue(withIdentifier: "toPopUpDelete", sender: UIView())
+                self.performSegue(withIdentifier: "toPopUpDelete", sender: tableView.cellForRow(at: indexPath))
             }
         }
     }

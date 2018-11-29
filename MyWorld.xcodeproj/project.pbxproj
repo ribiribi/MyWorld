@@ -15,6 +15,7 @@
 		092E221621999652008579CA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E221521999652008579CA /* DetailVC.swift */; };
 		092E2218219996CE008579CA /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E2217219996CE008579CA /* TableVC.swift */; };
 		095945BF2199CB2300A414F7 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095945BE2199CB2300A414F7 /* PlaceCell.swift */; };
+		097F31B421AE9A3700152DD9 /* DeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F31B321AE9A3700152DD9 /* DeleteVC.swift */; };
 		098358E6219833C100503202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098358E5219833C100503202 /* AppDelegate.swift */; };
 		098358EB219833C100503202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098358E9219833C100503202 /* Main.storyboard */; };
 		098358EE219833C100503202 /* MyWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 098358EC219833C100503202 /* MyWorld.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		092E221521999652008579CA /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		092E2217219996CE008579CA /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		095945BE2199CB2300A414F7 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		097F31B321AE9A3700152DD9 /* DeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteVC.swift; sourceTree = "<group>"; };
 		098358E2219833C100503202 /* MyWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		098358E5219833C100503202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		098358EA219833C100503202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				0915F658219DCDB300EE640E /* EditVC.swift */,
 				090D923D21A5C2D800F92021 /* NewVC.swift */,
 				09EC90B121A1651F0091450F /* MapVC.swift */,
+				097F31B321AE9A3700152DD9 /* DeleteVC.swift */,
 				098358EF219833C200503202 /* Assets.xcassets */,
 				092E220F21998992008579CA /* Place.swift */,
 				09F046E121AC0D1F00E766B1 /* Place+json.swift */,
@@ -169,6 +172,7 @@
 				0915F659219DCDB300EE640E /* EditVC.swift in Sources */,
 				098358E6219833C100503202 /* AppDelegate.swift in Sources */,
 				090D923E21A5C2D800F92021 /* NewVC.swift in Sources */,
+				097F31B421AE9A3700152DD9 /* DeleteVC.swift in Sources */,
 				095945BF2199CB2300A414F7 /* PlaceCell.swift in Sources */,
 				09F046E221AC0D1F00E766B1 /* Place+json.swift in Sources */,
 				09240C15219D53CF0087E566 /* DescriptionVC.swift in Sources */,
