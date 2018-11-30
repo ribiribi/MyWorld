@@ -10,7 +10,7 @@ import UIKit
 
 class DeleteVC: UIViewController {
 
-//.    let places = PlaceManager.shared
+//    let places = PlaceManager.shared
     var place: Place!
     
     override func viewDidLoad() {

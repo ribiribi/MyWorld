@@ -18,6 +18,9 @@ class DetailVC: UIViewController {
     @IBOutlet var detailView: UIView!    
     @IBOutlet weak var webAddress: UITextView!
     @IBOutlet weak var iconDetail: UIImageView!
+    @IBOutlet weak var descriptionDetailVC: UILabel!
+    @IBOutlet weak var scrollViewDetailVC: UIScrollView!
+    
     
     let places = PlaceManager.shared
     var place: Place!
@@ -29,6 +32,9 @@ class DetailVC: UIViewController {
         image?.image = UIImage(named: place.name)
         webAddress?.text = place.webAddress
         iconDetail?.image = UIImage(named: place.iconTable)
+        descriptionDetailVC?.text = place.descriptionPlace
+        
+        //view.addSubview(scrollViewDetailVC)
         
     //MARK: --------------------------------------- Slide to description view
         var swipeGesture  = UISwipeGestureRecognizer()
@@ -54,6 +60,12 @@ class DetailVC: UIViewController {
             iconDetail?.image = UIImage(named: place.iconTable)
         }
     }
+    
+//    //ScrollView Functions
+//    override func viewWillLayoutSubviews(){
+//        super.viewWillLayoutSubviews()
+//        scrollViewDetailVC.contentSize = CGSize(width: 375, height: 1500)
+//    }
     
     // MARK: ---------------------------------------  Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
