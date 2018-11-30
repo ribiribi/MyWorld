@@ -33,6 +33,8 @@ class DetailVC: UIViewController {
         iconDetail?.image = UIImage(named: place.iconTable)
         descriptionDetailVC?.text = place.descriptionPlace
         
+        image.layer.cornerRadius = 10
+        
     //MARK: --------------------------------------- Slide to description view
         var swipeGesture  = UISwipeGestureRecognizer()
         
