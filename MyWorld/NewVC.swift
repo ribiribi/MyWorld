@@ -40,13 +40,26 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return place.pickerViewArray.count
     }
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = place.pickerViewArray[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
-        return myTitle
-    }
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        let titleData = place.pickerViewArray[row]
+//        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+//        return myTitle
+//    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         place.iconTable = place.pickerViewArray[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Georgia", size: 14.0)
+            pickerLabel?.textAlignment = .center
+            pickerLabel?.textColor = UIColor.white
+        }
+        pickerLabel?.text = place.pickerViewArray[row]
+        pickerLabel?.textColor = UIColor.white
+        
+        return pickerLabel!
     }
 
     //Hide the iPhone keyboard
