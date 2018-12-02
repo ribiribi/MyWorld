@@ -9,18 +9,19 @@
 import UIKit
 import MapKit
 
-class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
 
     let manager = PlaceManager.shared
     var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "")
     var countNum = 0
+    let locationManager = CLLocationManager()
+    var actualPosition = CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13)
     
     @IBOutlet weak var nameNew: UITextView!
     @IBOutlet weak var descriptionNew: UITextView!
     @IBOutlet weak var webAddressNew: UITextView!
     @IBOutlet weak var imageNew: UIImageView!
     @IBOutlet weak var pikerViewNew: UIPickerView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,18 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         self.descriptionNew?.text = "write the description"
         self.webAddressNew.text = "write the web address"
         place.iconTable = "defaultBlue"
-    }
+        
+        // Ask for GPS Authorisation.
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        //Location
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+}
     
     // MARK: --------------------------------------------------Functions
     //PickerView functions
@@ -40,11 +52,7 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return place.pickerViewArray.count
     }
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        let titleData = place.pickerViewArray[row]
-//        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
-//        return myTitle
-//    }
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         place.iconTable = place.pickerViewArray[row]
     }
@@ -81,9 +89,21 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         self.animateViewMoving(up: false, moveValue: 110)
     }
     
+    //Location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        actualPosition = locValue
+        
+        manager.stopUpdatingLocation()
+    }
+    
+    //Back
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.isMovingFromParent {
+
+            
             //Save into manager
             countNum = manager.count()
             manager.append(place)
@@ -91,9 +111,11 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
             manager.places[countNum].descriptionPlace = descriptionNew.text
             manager.places[countNum].webAddress = webAddressNew.text
             manager.places[countNum].imageName = "modernBuilding"
+            manager.places[countNum].position = actualPosition
             
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
         }
     }
+
 }
