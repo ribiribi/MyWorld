@@ -66,6 +66,7 @@ class TableVC: UITableViewController {
 
                 let accept = UIAlertAction(title: "Esborrar localització", style: UIAlertAction.Style.default) { (action) in
                     self.places.removeFromPosition(indexPath.item)
+                    self.places.saveJsonToFile(origin: self.places.places)
                     self.tableView.reloadData()
                 }
                 
