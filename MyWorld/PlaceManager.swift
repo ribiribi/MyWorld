@@ -39,6 +39,10 @@ class PlaceManager {
     func remove(_ place: Place) {
         places = places.filter {$0.id != place.id}
     }
+
+    func removeFromPosition(_ indexPath: Int){
+        places.remove(at: indexPath)
+    }
     
     //MARK: ---------------------------------------  Access to files and codification
     func jsonFrom(places: [Place]) -> Data?{

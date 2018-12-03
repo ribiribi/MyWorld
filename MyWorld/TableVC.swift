@@ -47,28 +47,36 @@ class TableVC: UITableViewController {
             let elementDetailVC = segue.destination as! DetailVC
             elementDetailVC.place = place
         }
-        if segue.identifier == "toPopUpDelete" {
-            
-            let cell = sender as! PlaceCell
-            let index = tableView.indexPath(for: cell)!.row
-            //let place = places.someTestPlaces[index]
-            let place = places.places[index]
-            let elementTableVC = segue.destination as! DeleteVC
-            elementTableVC.place = place
-        }
     }
+    
     //MARK: -----------------------------------Refresh
     override func viewDidAppear(_ animated: Bool){
         if refresh == true {
             self.tableView.reloadData()
         }
     }
+    
+    //MARK: -----------------------------------Long Press
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-//                self.performSegue(withIdentifier: "toPopUpDelete", sender: UIView())
-                self.performSegue(withIdentifier: "toPopUpDelete", sender: tableView.cellForRow(at: indexPath))
+                
+                let alert = UIAlertController(title: "UIAlertController", message: "Estas segur eque vols sborrar la localització seleccionada?", preferredStyle: UIAlertController.Style.alert)
+
+                let accept = UIAlertAction(title: "Esborrar localització", style: UIAlertAction.Style.default) { (action) in
+                    self.places.removeFromPosition(indexPath.item)
+                    self.tableView.reloadData()
+                }
+                
+                let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (action) in
+                    print("Blue action button tapped")
+                }
+                
+                alert.addAction(accept)
+                alert.addAction(cancel)
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

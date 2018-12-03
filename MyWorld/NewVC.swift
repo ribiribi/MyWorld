@@ -12,7 +12,7 @@ import MapKit
 class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
 
     let manager = PlaceManager.shared
-    var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "")
+    var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "Default")
     var countNum = 0
     let locationManager = CLLocationManager()
     var actualPosition = CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13)
@@ -30,7 +30,7 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         self.imageNew?.image = UIImage(named: "modernBuilding")
         self.descriptionNew?.text = "write the description"
         self.webAddressNew.text = "write the web address"
-        place.iconTable = "defaultBlue"
+        place.iconTable = "Default"
         
         // Ask for GPS Authorisation.
         self.locationManager.requestAlwaysAuthorization()
@@ -101,9 +101,8 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     //Back
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+       
         if self.isMovingFromParent {
-
-            
             //Save into manager
             countNum = manager.count()
             manager.append(place)
@@ -111,8 +110,8 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
             manager.places[countNum].descriptionPlace = descriptionNew.text
             manager.places[countNum].webAddress = webAddressNew.text
             manager.places[countNum].imageName = "modernBuilding"
+            manager.places[countNum].iconTable = place.iconTable
             manager.places[countNum].position = actualPosition
-            
             //Save into file
             manager.saveJsonToFile(origin: manager.places)
         }
