@@ -21,6 +21,7 @@
 		098358EE219833C100503202 /* MyWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 098358EC219833C100503202 /* MyWorld.xcdatamodeld */; };
 		098358F0219833C200503202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098358EF219833C200503202 /* Assets.xcassets */; };
 		098358F3219833C200503202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098358F1219833C200503202 /* LaunchScreen.storyboard */; };
+		09E91DFE21B731070097E2A7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E91DFD21B731070097E2A7 /* MenuVC.swift */; };
 		09EC90B221A1651F0091450F /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC90B121A1651F0091450F /* MapVC.swift */; };
 		09F046E221AC0D1F00E766B1 /* Place+json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F046E121AC0D1F00E766B1 /* Place+json.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		098358EF219833C200503202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		098358F2219833C200503202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		098358F4219833C200503202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09E91DFD21B731070097E2A7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		09EC90B121A1651F0091450F /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		09F046E121AC0D1F00E766B1 /* Place+json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+json.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				098358E9219833C100503202 /* Main.storyboard */,
+				09E91DFD21B731070097E2A7 /* MenuVC.swift */,
 				092E2217219996CE008579CA /* TableVC.swift */,
 				092E221521999652008579CA /* DetailVC.swift */,
 				09240C14219D53CF0087E566 /* DescriptionVC.swift */,
@@ -171,6 +174,7 @@
 				092E221621999652008579CA /* DetailVC.swift in Sources */,
 				0915F659219DCDB300EE640E /* EditVC.swift in Sources */,
 				098358E6219833C100503202 /* AppDelegate.swift in Sources */,
+				09E91DFE21B731070097E2A7 /* MenuVC.swift in Sources */,
 				090D923E21A5C2D800F92021 /* NewVC.swift in Sources */,
 				097F31B421AE9A3700152DD9 /* DeleteVC.swift in Sources */,
 				095945BF2199CB2300A414F7 /* PlaceCell.swift in Sources */,
