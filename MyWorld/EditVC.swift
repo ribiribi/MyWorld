@@ -27,6 +27,7 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.imageEdit?.image = UIImage(named: place.imageName)
         self.descriptionEdit?.text = place.descriptionPlace
         self.webAddressEdit?.text = place.webAddress
+        
         //Load the pickerView
         if let initialIcon = place.pickerViewArray.index(of: place.iconTable){
             pickerViewEdit.selectRow(initialIcon, inComponent: 0, animated: true)
@@ -35,6 +36,9 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
             pickerViewEdit.selectRow(0, inComponent: 0, animated: true)
         }
         
+        //Formating the labels
+        descriptionEdit.layer.borderColor = UIColor.white.cgColor
+        descriptionEdit.layer.borderWidth = 0.3
     }
     
     // MARK: --------------------------------------------------Functions
@@ -45,11 +49,25 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return place.pickerViewArray.count
     }
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = place.pickerViewArray[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
-        return myTitle
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        let titleData = place.pickerViewArray[row]
+//        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+//        return myTitle
+//    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Georgia", size: 14.0)
+            pickerLabel?.textAlignment = .center
+            pickerLabel?.textColor = UIColor.white
+        }
+        pickerLabel?.text = place.pickerViewArray[row]
+        pickerLabel?.textColor = UIColor.white
+        
+        return pickerLabel!
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         for item in self.manager.places {
             if place.id == item.id{
