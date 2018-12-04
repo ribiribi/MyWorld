@@ -10,12 +10,18 @@ import UIKit
 
 class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
 
-    @IBOutlet weak var imageEdit: UIImageView!
+//    @IBOutlet weak var imageEdit: UIImageView!
+//    @IBOutlet weak var nameEdit: UITextView!
+//    @IBOutlet weak var descriptionEdit: UITextView!
+//    @IBOutlet weak var webAddressEdit: UITextView!
+//    @IBOutlet weak var pickerViewEdit: UIPickerView!
+    
     @IBOutlet weak var nameEdit: UITextView!
+    @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var descriptionEdit: UITextView!
     @IBOutlet weak var webAddressEdit: UITextView!
     @IBOutlet weak var pickerViewEdit: UIPickerView!
-
+    
     let manager = PlaceManager.shared
     var place: Place!
     //var initialIcon = 0
