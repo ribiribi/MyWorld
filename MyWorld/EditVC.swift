@@ -9,22 +9,16 @@
 import UIKit
 
 class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
-
-//    @IBOutlet weak var imageEdit: UIImageView!
-//    @IBOutlet weak var nameEdit: UITextView!
-//    @IBOutlet weak var descriptionEdit: UITextView!
-//    @IBOutlet weak var webAddressEdit: UITextView!
-//    @IBOutlet weak var pickerViewEdit: UIPickerView!
     
     @IBOutlet weak var nameEdit: UITextView!
     @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var descriptionEdit: UITextView!
     @IBOutlet weak var webAddressEdit: UITextView!
     @IBOutlet weak var pickerViewEdit: UIPickerView!
+    @IBOutlet weak var stackViewEdit: UIStackView!
     
     let manager = PlaceManager.shared
     var place: Place!
-    //var initialIcon = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +36,14 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
             pickerViewEdit.selectRow(0, inComponent: 0, animated: true)
         }
         
-        //Formating the labels
+        //Formating the labels and image
         descriptionEdit.layer.borderColor = UIColor.white.cgColor
         descriptionEdit.layer.borderWidth = 0.3
+        descriptionEdit.layer.cornerRadius = 8
+        webAddressEdit.layer.borderColor = UIColor.white.cgColor
+        webAddressEdit.layer.borderWidth = 0.3
+        webAddressEdit.layer.cornerRadius = 8
+        imageEdit.layer.cornerRadius = 8
     }
     
     // MARK: --------------------------------------------------Functions
