@@ -19,7 +19,11 @@ class DetailVC: UIViewController {
     @IBOutlet weak var iconDetail: UIImageView!
     @IBOutlet weak var descriptionDetailVC: UILabel!
     @IBOutlet weak var scrollViewDetailVC: UIScrollView!
+    @IBOutlet weak var toMapImage: UIButton!
     
+    @IBAction func toMapTab(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 1
+    }
     
     let places = PlaceManager.shared
     var place: Place!
@@ -33,7 +37,9 @@ class DetailVC: UIViewController {
         iconDetail?.image = UIImage(named: place.iconTable)
         descriptionDetailVC?.text = place.descriptionPlace
         
+        //Format
         image.layer.cornerRadius = 10
+        
         
     //MARK: --------------------------------------- Slide to description view
         var swipeGesture  = UISwipeGestureRecognizer()
