@@ -117,12 +117,16 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     }
     
     internal func textViewDidBeginEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: true, moveValue: 100)
+        if textView != self.nameEdit{
+            self.animateViewMoving(up: true, moveValue: 100)
+        }
     }
     
     
     internal func textViewDidEndEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: false, moveValue: 100)
+        if textView != self.nameEdit{
+            self.animateViewMoving(up: false, moveValue: 100)
+        }
     }
     
     
