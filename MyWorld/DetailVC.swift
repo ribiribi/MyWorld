@@ -10,7 +10,7 @@ import UIKit
 
 var refresh = false
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, UITabBarControllerDelegate {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -21,16 +21,25 @@ class DetailVC: UIViewController {
     @IBOutlet weak var scrollViewDetailVC: UIScrollView!
     @IBOutlet weak var toMapImage: UIButton!
     
-    @IBAction func toMapTab(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 1
-    }
-    
     let places = PlaceManager.shared
     var place: Place!
+    
+    //to map Tab bar
+    @IBAction func toMapTab(_ sender: Any) {
+        
+        let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
+        let vc = navController.topViewController as! MapVC
+        vc.place = place
+        self.tabBarController?.selectedIndex = 1
+        //}
+    }
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.delegate = self
+
         name?.text = place.name
         image?.image = UIImage(named: place.name)
         webAddress?.text = place.webAddress

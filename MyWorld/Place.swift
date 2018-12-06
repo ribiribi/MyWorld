@@ -40,6 +40,7 @@ final class Place: NSObject, Codable {
         self.iconTable = iconTable
     }    
     init (name: String, descriptionPlace: String, webAddress: String, position: CLLocationCoordinate2D, imageName: String, iconTable: String){
+        self.id = UUID().uuidString
         self.name = name
         self.descriptionPlace = descriptionPlace
         self.webAddress = webAddress
