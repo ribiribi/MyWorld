@@ -54,11 +54,6 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return place.pickerViewArray.count
     }
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        let titleData = place.pickerViewArray[row]
-//        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Georgia", size: 10.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
-//        return myTitle
-//    }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
@@ -104,6 +99,7 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.animateViewMoving(up: false, moveValue: 100)
     }
     
+    //Save that when changes happen
     internal func textViewDidChange(_ textView: UITextView){
         for item in self.manager.places {
             if place.id == item.id{

@@ -24,83 +24,63 @@ class DetailVC: UIViewController, UITabBarControllerDelegate {
     let places = PlaceManager.shared
     var place: Place!
     
-    //to map Tab bar
-    @IBAction func toMapTab(_ sender: Any) {
-        
-        let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
-        let vc = navController.topViewController as! MapVC
-        vc.place = place
-        self.tabBarController?.selectedIndex = 1
-        //}
-    }
-        
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.tabBarController?.delegate = self
 
         name?.text = place.name
-        image?.image = UIImage(named: place.name)
+        image?.image = UIImage(named: place.imageName)
         webAddress?.text = place.webAddress
         iconDetail?.image = UIImage(named: place.iconTable)
         descriptionDetailVC?.text = place.descriptionPlace
         
-        //Format
+        //Formatting
         image.layer.cornerRadius = 10
-        
-        
-    //MARK: --------------------------------------- Slide to description view
-        var swipeGesture  = UISwipeGestureRecognizer()
-        
-        let directions: [UISwipeGestureRecognizer.Direction] = [.up, .down, .right, .left]
-        for direction in directions {
-            swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(DetailVC.swipeView(_:)))
-            detailView?.addGestureRecognizer(swipeGesture)
-            swipeGesture.direction = direction
-            detailView?.isUserInteractionEnabled = true
-            detailView?.isMultipleTouchEnabled = true
-        }
-        
-        refresh = true
     }
+        
 
     //MARK: --------------------------------------- Refresh
     override func viewDidAppear(_ animated: Bool){
+        
         if refresh == true {
             name?.text = place.name
             webAddress?.text = place.webAddress
             image?.image = UIImage(named: place.imageName)
+            descriptionDetailVC?.text = place.descriptionPlace
             iconDetail?.image = UIImage(named: place.iconTable)
         }
     }
     
     // MARK: ---------------------------------------  Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toDescription" {
+            
             let descriptionVC = segue.destination as! DescriptionVC
             descriptionVC.toDescriptionLabel = place.descriptionPlace
         }
         if segue.identifier == "toEdit"{
+            
             let editVC = segue.destination as! EditVC
             editVC.place = place
-           
         }
         if segue.identifier == "toNew"{
+            
             let newVC = segue.destination as! NewVC
             newVC.place = place
-            
         }
     }
     
-    @objc func swipeView(_ sender : UISwipeGestureRecognizer){
-        UIView.animate(withDuration: 1.0) {
-            if sender.direction == .left {
-                self.detailView.frame = CGRect(x: self.view.frame.size.width - self.detailView.frame.size.width, y: self.detailView.frame.origin.y , width: self.detailView.frame.size.width, height: self.detailView.frame.size.height)
-                self.performSegue(withIdentifier: "toDescription", sender: UIView())
-            }
-            self.detailView.layoutIfNeeded()
-            self.detailView.setNeedsDisplay()
-        }
+    //to map Tab bar
+    @IBAction func toMapTab(_ sender: Any) {
+        
+        let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
+        let vc = navController.topViewController as! MapVC
+        vc.place = place
+        
+        self.tabBarController?.selectedIndex = 1
     }
 }
