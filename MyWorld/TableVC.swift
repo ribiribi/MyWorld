@@ -13,6 +13,7 @@ class TableVC: UITableViewController {
 
     let places = PlaceManager.shared
     var refresh = false
+    var whatButton = ""
     
     
     //MARK: -----------------------------------Refresh

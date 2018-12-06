@@ -12,9 +12,27 @@ class MenuVC: UIViewController {
 
     
     @IBOutlet weak var oneXOne: UIButton!
+    @IBOutlet weak var twoXOne: UIButton!
+    @IBOutlet weak var threeXOne: UIButton!
+    
+    var whatButton = ""
+    
     
     @IBAction func oneXOne(_ sender: Any) {
+        whatButton = "oneXOne"
+        performSegue(withIdentifier: "toTable", sender: sender)
     }
+    
+    @IBAction func twoXOne(_ sender: Any) {
+        whatButton = "oneXOne"
+        performSegue(withIdentifier: "toTable", sender: sender)
+    }
+    
+    @IBAction func threeXOne(_ sender: Any) {
+        whatButton = "oneXOne"
+        performSegue(withIdentifier: "toTable", sender: sender)
+    }
+    
     
     override func viewDidLoad() {
         
@@ -24,5 +42,14 @@ class MenuVC: UIViewController {
         oneXOne.layer.cornerRadius = 8
         oneXOne.layer.borderColor = UIColor.white.cgColor
         oneXOne.layer.borderWidth = 0.5
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toTable"{
+            
+            let tableVC = segue.destination as! TableVC
+            tableVC.whatButton = whatButton
+        }
     }
 }
