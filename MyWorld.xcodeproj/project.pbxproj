@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		090D923E21A5C2D800F92021 /* NewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D923D21A5C2D800F92021 /* NewVC.swift */; };
 		0915F659219DCDB300EE640E /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0915F658219DCDB300EE640E /* EditVC.swift */; };
-		09240C15219D53CF0087E566 /* DescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09240C14219D53CF0087E566 /* DescriptionVC.swift */; };
 		092E221021998992008579CA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E220F21998992008579CA /* Place.swift */; };
 		092E221221998E67008579CA /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E221121998E67008579CA /* PlaceManager.swift */; };
 		092E221621999652008579CA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E221521999652008579CA /* DetailVC.swift */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		090D923D21A5C2D800F92021 /* NewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVC.swift; sourceTree = "<group>"; };
 		0915F658219DCDB300EE640E /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
-		09240C14219D53CF0087E566 /* DescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionVC.swift; sourceTree = "<group>"; };
 		092E220F21998992008579CA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		092E221121998E67008579CA /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		092E221521999652008579CA /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				092E2217219996CE008579CA /* TableVC.swift */,
 				0996BC3321B9339200587609 /* TableVC+longPress.swift */,
 				092E221521999652008579CA /* DetailVC.swift */,
-				09240C14219D53CF0087E566 /* DescriptionVC.swift */,
 				0915F658219DCDB300EE640E /* EditVC.swift */,
 				090D923D21A5C2D800F92021 /* NewVC.swift */,
 				09EC90B121A1651F0091450F /* MapVC.swift */,
@@ -182,7 +179,6 @@
 				097F31B421AE9A3700152DD9 /* DeleteVC.swift in Sources */,
 				095945BF2199CB2300A414F7 /* PlaceCell.swift in Sources */,
 				09F046E221AC0D1F00E766B1 /* Place+json.swift in Sources */,
-				09240C15219D53CF0087E566 /* DescriptionVC.swift in Sources */,
 				09EC90B221A1651F0091450F /* MapVC.swift in Sources */,
 				0996BC3421B9339200587609 /* TableVC+longPress.swift in Sources */,
 				098358EE219833C100503202 /* MyWorld.xcdatamodeld in Sources */,

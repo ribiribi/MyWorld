@@ -8,21 +8,24 @@
 
 import UIKit
 
+
 extension TableVC{
+   
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        //long press recognizer
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(longPressGestureRecognizer:)))
         tableView.addGestureRecognizer(longPress)
     }
     
-    //MARK: -----------------------------------Long Press
+    
     @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
-        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+        
+        if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {            
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
+            
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-                
                 let alert = UIAlertController(title: "UIAlertController", message: "Estas segur que vols esborrar la localització seleccionada?", preferredStyle: UIAlertController.Style.alert)
                 
                 let accept = UIAlertAction(title: "Esborrar localització", style: UIAlertAction.Style.default) { (action) in

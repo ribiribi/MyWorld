@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+
 class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
 
     let manager = PlaceManager.shared

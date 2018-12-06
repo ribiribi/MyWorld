@@ -9,13 +9,17 @@
 import UIKit
 import MapKit
 
+
 class MapVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    
     let manager = PlaceManager.shared
     var place: Place!
     
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let region = MKCoordinateRegion(center: manager.places[1].coordinate, latitudinalMeters: 10_000, longitudinalMeters: 10_000)
@@ -26,11 +30,11 @@ class MapVC: UIViewController {
         }
     }
     
+    
      override func viewDidAppear(_ animated: Bool){
         //Showing the single place
 //        for item in manager.places{
 //            if manager.places.
 //        }
     }
-//MARK: --------------------------------------- Navigation
 }

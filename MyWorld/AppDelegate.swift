@@ -7,15 +7,18 @@
 //
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    
     func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+       
         let manager = PlaceManager.shared
        
-        // MARK -------------------------------------- Save and load data
+        //Save data
         let docsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = docsPath.appendingPathComponent("places.json")
         let fileManager = FileManager.default
@@ -25,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //If don't exist the file, we create it with test information.
             manager.saveJsonToFile(origin: manager.someTestPlaces)
         //}
-            
+        
+        
         //Load data
         do{
             let jasonData = try Data(contentsOf: filePath)
@@ -34,9 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for place in places{
                 manager.append(place)
             }
+            
         } catch {
             print ("Error saving to local file")
         }
+        
         return true
     }
 }

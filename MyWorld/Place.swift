@@ -9,8 +9,9 @@
 import Foundation
 import MapKit
 
+
 final class Place: NSObject, Codable {
-    //al posar "final" assegurem que no te subclasses i per tant no cal posar que els inicialitzadors (from: codable que estan a l'extenció place+jason) son "required" (required no es permès en cap extenció).
+
     enum PlaceType {
         case generic
         case touristic
@@ -18,7 +19,6 @@ final class Place: NSObject, Codable {
     
     var pickerViewArray = ["Default", "Culture", "Restaurant", "Museum", "Fast Foot", "Asian Restaurant"]
     var id = ""
-    //var type = PlaceType.generic
     var name = ""
     var descriptionPlace = ""
     var webAddress = ""
@@ -26,7 +26,6 @@ final class Place: NSObject, Codable {
     var image: Data?
     var imageName = ""
     var iconTable = ""
-    
     
     //MARK: - Inits    
     init (name: String, descriptionPlace: String, webAddress: String, image_in: Data?, position: CLLocationCoordinate2D, imageName: String, iconTable: String) {

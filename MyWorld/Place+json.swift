@@ -8,6 +8,7 @@
 
 import MapKit
 
+
 extension Place{
     enum PlaceKeys: String, CodingKey {
         case name = "name"
@@ -18,6 +19,7 @@ extension Place{
         case imageName = "imageName"
         case iconTable = "iconTable"
     }
+    
     convenience init(from: Decoder) throws {   //whats mean required convenience????
         let container = try from.container(keyedBy: PlaceKeys.self)
         let name = try container.decode(String.self, forKey: .name)
@@ -45,9 +47,11 @@ extension Place{
 }
 //Extension required by MKAnnotation
 extension Place: MKAnnotation{
+    
     var coordinate: CLLocationCoordinate2D{
         return position
     }
+    
     var title: String?{
         return name
     }

@@ -8,27 +8,32 @@
 
 import UIKit
 
+
 class PlaceCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconTable: UIImageView!
     @IBOutlet weak var colorBackgroundView: UIView!{
+        
         didSet {
             colorBackgroundView.layer.cornerRadius = 10
         }
     }
+    
+    
     @IBOutlet weak var colorBackgroundArrowView: UIView!{
         didSet {
             colorBackgroundArrowView.layer.cornerRadius = 10
         }
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }

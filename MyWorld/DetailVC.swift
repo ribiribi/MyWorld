@@ -8,7 +8,9 @@
 //Detail and Description ViewControllers
 import UIKit
 
+
 var refresh = false
+
 
 class DetailVC: UIViewController, UITabBarControllerDelegate {
 
@@ -37,12 +39,12 @@ class DetailVC: UIViewController, UITabBarControllerDelegate {
         iconDetail?.image = UIImage(named: place.iconTable)
         descriptionDetailVC?.text = place.descriptionPlace
         
-        //Formatting
         image.layer.cornerRadius = 10
+        
+        refresh = true
     }
         
 
-    //MARK: --------------------------------------- Refresh
     override func viewDidAppear(_ animated: Bool){
         
         if refresh == true {
@@ -54,19 +56,16 @@ class DetailVC: UIViewController, UITabBarControllerDelegate {
         }
     }
     
+    
     // MARK: ---------------------------------------  Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toDescription" {
-            
-            let descriptionVC = segue.destination as! DescriptionVC
-            descriptionVC.toDescriptionLabel = place.descriptionPlace
-        }
         if segue.identifier == "toEdit"{
             
             let editVC = segue.destination as! EditVC
             editVC.place = place
         }
+        
         if segue.identifier == "toNew"{
             
             let newVC = segue.destination as! NewVC
@@ -74,7 +73,7 @@ class DetailVC: UIViewController, UITabBarControllerDelegate {
         }
     }
     
-    //to map Tab bar
+    
     @IBAction func toMapTab(_ sender: Any) {
         
         let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
