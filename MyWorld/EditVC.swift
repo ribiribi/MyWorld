@@ -17,6 +17,7 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     @IBOutlet weak var webAddressEdit: UITextView!
     @IBOutlet weak var pickerViewEdit: UIPickerView!
     @IBOutlet weak var stackViewEdit: UIStackView!
+    @IBOutlet weak var iconEdit: UIImageView!
     
     let manager = PlaceManager.shared
     var place: Place!
@@ -46,6 +47,9 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         webAddressEdit.layer.borderColor = UIColor.white.cgColor
         webAddressEdit.layer.borderWidth = 0.3
         webAddressEdit.layer.cornerRadius = 8
+        nameEdit.layer.borderColor = UIColor.white.cgColor
+        nameEdit.layer.borderWidth = 0.3
+        nameEdit.layer.cornerRadius = 8
         imageEdit.layer.cornerRadius = 8
     }
     
@@ -79,6 +83,7 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        iconEdit.image = UIImage(named: (place.pickerViewArray[row]))
         
         for item in self.manager.places {
             if place.id == item.id{
@@ -106,7 +111,10 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         self.view.frame = self.view.frame.offsetBy(dx:0, dy: movement)
         UIView.commitAnimations()
     }
-   
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     internal func textViewDidBeginEditing(_ textView: UITextView) {
         self.animateViewMoving(up: true, moveValue: 100)

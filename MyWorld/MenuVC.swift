@@ -10,7 +10,6 @@ import UIKit
 
 class MenuVC: UIViewController {
 
-
     
     @IBOutlet weak var oneXOne: UIButton!
     
@@ -18,6 +17,7 @@ class MenuVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         //Adding format
