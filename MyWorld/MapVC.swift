@@ -33,8 +33,13 @@ class MapVC: UIViewController {
     
      override func viewDidAppear(_ animated: Bool){
         //Showing the single place
-//        for item in manager.places{
-//            if manager.places.
-//        }
+        for item in manager.places{
+            
+            if place.id == item.id {
+                let actualPlace = place.coordinate
+                let region = MKCoordinateRegion(center: actualPlace, latitudinalMeters: 10_000, longitudinalMeters: 10_000)
+                mapView.setRegion(region, animated: true)
+            }
+        }
     }
 }

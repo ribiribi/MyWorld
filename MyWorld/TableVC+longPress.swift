@@ -26,7 +26,7 @@ extension TableVC{
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-                let alert = UIAlertController(title: "UIAlertController", message: "Estas segur que vols esborrar la localització seleccionada?", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "", message: "Estas segur que vols esborrar la localització seleccionada?", preferredStyle: UIAlertController.Style.alert)
                 
                 let accept = UIAlertAction(title: "Esborrar localització", style: UIAlertAction.Style.default) { (action) in
                     self.places.removeFromPosition(indexPath.item)
