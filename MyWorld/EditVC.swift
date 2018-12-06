@@ -33,7 +33,6 @@ class EditVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPi
         
 
         if let initialIcon = place.pickerViewArray.index(of: place.iconTable){
-            
             pickerViewEdit.selectRow(initialIcon, inComponent: 0, animated: true)
         }
         else{

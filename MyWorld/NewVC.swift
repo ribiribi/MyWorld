@@ -19,23 +19,41 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     var actualPosition = CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13)
     
     @IBOutlet weak var nameNew: UITextView!
-    @IBOutlet weak var descriptionNew: UITextView!
     @IBOutlet weak var webAddressNew: UITextView!
+    @IBOutlet weak var descriptionNew: UITextView!
     @IBOutlet weak var imageNew: UIImageView!
     @IBOutlet weak var pikerViewNew: UIPickerView!
+    @IBOutlet weak var iconNew: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.nameNew?.text = "write the new name"
+        self.nameNew?.text = "Write here the new name"
         self.imageNew?.image = UIImage(named: "modernBuilding")
-        self.descriptionNew?.text = "write the description"
-        self.webAddressNew.text = "write the web address"
+        self.descriptionNew?.text = "Write here the description"
+        self.webAddressNew.text = "Write here the web address"
         place.iconTable = "Default"
+        
+        iconNew.image = UIImage(named: "Default")
+        pikerViewNew.selectRow(0, inComponent: 0, animated: true)
+        
+        descriptionNew.layer.borderColor = UIColor.white.cgColor
+        descriptionNew.layer.borderWidth = 0.3
+        descriptionNew.layer.cornerRadius = 8
+        webAddressNew.layer.borderColor = UIColor.white.cgColor
+        webAddressNew.layer.borderWidth = 0.3
+        webAddressNew.layer.cornerRadius = 8
+        nameNew.layer.borderColor = UIColor.white.cgColor
+        nameNew.layer.borderWidth = 0.3
+        nameNew.layer.cornerRadius = 8
+        imageNew.layer.cornerRadius = 8
+        
         
         // Ask for GPS Authorisation.
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
+        
         
         //Location
         if CLLocationManager.locationServicesEnabled() {
@@ -45,18 +63,22 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         }
 }
     
+    
     // MARK: --------------------------------------------------Functions
     //PickerView functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return place.pickerViewArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        iconNew.image = UIImage(named: (place.pickerViewArray[row]))
         place.iconTable = place.pickerViewArray[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
@@ -82,12 +104,21 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         UIView.commitAnimations()
     }
     
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     internal func textViewDidBeginEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: true, moveValue: 110)
+        if textView != self.nameNew{
+            self.animateViewMoving(up: true, moveValue: 100)
+        }
     }
     
     internal func textViewDidEndEditing(_ textView: UITextView) {
-        self.animateViewMoving(up: false, moveValue: 110)
+        if textView != self.nameNew{
+            self.animateViewMoving(up: false, moveValue: 100)
+        }
     }
     
     //Location
