@@ -8,48 +8,52 @@
 
 import UIKit
 
+
 class TableVC: UITableViewController {
 
     let places = PlaceManager.shared
     var refresh = false
+    var whatButton = ""
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    //MARK: -----------------------------------Refresh
+    override func viewDidAppear(_ animated: Bool){
+        
+        if refresh == true {
+            self.tableView.reloadData()
+        }
     }
     
-   
-
+    
     // MARK: --------------------------------- Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return places.count()
     }
 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! PlaceCell
         let place = places.itemAt(position: indexPath.item)
         
         cell.nameLabel.text = place?.name
+        cell.iconTable.image = UIImage(named: (place?.iconTable)!)
         
-        refresh = true
-        
+        refresh = true        
         return cell
     }
     
+    
     // MARK: --------------------------------- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toDetail" {
             let cell = sender as! PlaceCell
             let index = tableView.indexPath(for: cell)!.row
-            //let place = places.someTestPlaces[index]
             let place = places.places[index]
             let elementDetailVC = segue.destination as! DetailVC
             elementDetailVC.place = place
-        }
-    }
-    //MARK: -----------------------------------Refresh
-    override func viewDidAppear(_ animated: Bool){
-        if refresh == true {
-            self.tableView.reloadData()
         }
     }
 }
