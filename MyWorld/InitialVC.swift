@@ -32,9 +32,9 @@ class InitialVC: UIViewController {
 //        })
         
             
-        let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
+        let timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
             
-            UIView.animate(withDuration: 2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 3, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 self.welcomeLAbel.alpha = 1
                 self.blureView.alpha = 0.8
                 
