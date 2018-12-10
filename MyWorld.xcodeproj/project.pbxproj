@@ -20,6 +20,7 @@
 		098358F0219833C200503202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098358EF219833C200503202 /* Assets.xcassets */; };
 		098358F3219833C200503202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098358F1219833C200503202 /* LaunchScreen.storyboard */; };
 		0996BC3421B9339200587609 /* TableVC+longPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996BC3321B9339200587609 /* TableVC+longPress.swift */; };
+		09DF92BE21BEAB3A00C0A87D /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF92BD21BEAB3A00C0A87D /* InitialVC.swift */; };
 		09E91DFE21B731070097E2A7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E91DFD21B731070097E2A7 /* MenuVC.swift */; };
 		09EC90B221A1651F0091450F /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC90B121A1651F0091450F /* MapVC.swift */; };
 		09F046E221AC0D1F00E766B1 /* Place+json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F046E121AC0D1F00E766B1 /* Place+json.swift */; };
@@ -41,6 +42,7 @@
 		098358F2219833C200503202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		098358F4219833C200503202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0996BC3321B9339200587609 /* TableVC+longPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableVC+longPress.swift"; sourceTree = "<group>"; };
+		09DF92BD21BEAB3A00C0A87D /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		09E91DFD21B731070097E2A7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		09EC90B121A1651F0091450F /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		09F046E121AC0D1F00E766B1 /* Place+json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+json.swift"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				098358E9219833C100503202 /* Main.storyboard */,
+				09DF92BD21BEAB3A00C0A87D /* InitialVC.swift */,
 				09E91DFD21B731070097E2A7 /* MenuVC.swift */,
 				092E2217219996CE008579CA /* TableVC.swift */,
 				0996BC3321B9339200587609 /* TableVC+longPress.swift */,
@@ -179,6 +182,7 @@
 				0996BC3421B9339200587609 /* TableVC+longPress.swift in Sources */,
 				098358EE219833C100503202 /* MyWorld.xcdatamodeld in Sources */,
 				092E2218219996CE008579CA /* TableVC.swift in Sources */,
+				09DF92BE21BEAB3A00C0A87D /* InitialVC.swift in Sources */,
 				092E221021998992008579CA /* Place.swift in Sources */,
 				092E221221998E67008579CA /* PlaceManager.swift in Sources */,
 			);
