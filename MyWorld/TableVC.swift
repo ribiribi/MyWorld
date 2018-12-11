@@ -14,7 +14,8 @@ class TableVC: UITableViewController {
     let places = PlaceManager.shared
     var refresh = false
     var whatButton = ""
-    
+
+
     
     //MARK: -----------------------------------Refresh
     override func viewDidAppear(_ animated: Bool){
@@ -36,11 +37,10 @@ class TableVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! PlaceCell
         let place = places.itemAt(position: indexPath.item)
-        
         cell.nameLabel.text = place?.name
         cell.iconTable.image = UIImage(named: (place?.iconTable)!)
         
-        refresh = true        
+        refresh = true
         return cell
     }
     
