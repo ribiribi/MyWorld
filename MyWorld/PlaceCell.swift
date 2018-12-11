@@ -16,14 +16,14 @@ class PlaceCell: UITableViewCell {
     @IBOutlet weak var colorBackgroundView: UIView!{
         
         didSet {
-            colorBackgroundView.layer.cornerRadius = 10
+            colorBackgroundView.layer.cornerRadius = 8
         }
     }
     
     
     @IBOutlet weak var colorBackgroundArrowView: UIView!{
         didSet {
-            colorBackgroundArrowView.layer.cornerRadius = 10
+            colorBackgroundArrowView.layer.cornerRadius = 8
         }
     }
     
