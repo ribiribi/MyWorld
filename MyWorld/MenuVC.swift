@@ -17,6 +17,19 @@ class MenuVC: UIViewController {
     @IBOutlet weak var oneXTwo: UIButton!
     @IBOutlet weak var twoXTwo: UIButton!
     @IBOutlet weak var threeXThree: UIButton!
+    @IBOutlet weak var viewOneXOne: UIView!
+    @IBOutlet weak var labelOneXOne: UILabel!
+    @IBOutlet weak var viewTwoXOne: UIView!
+    @IBOutlet weak var labelTwoXOne: UILabel!
+    @IBOutlet weak var viewThreeXOne: UIView!
+    @IBOutlet weak var labelThreeXOne: UILabel!
+    @IBOutlet weak var viewOneXTo: UIView!
+    @IBOutlet weak var labelOneXTo: UILabel!
+    @IBOutlet weak var viewTwoXTwo: UIView!
+    @IBOutlet weak var labelTwoXTwo: UILabel!
+    @IBOutlet weak var viewThreeXThree: UIView!
+    @IBOutlet weak var labelThreeXThree: UILabel!
+    
     
     var whatButton = ""
     
@@ -57,29 +70,35 @@ class MenuVC: UIViewController {
         super.viewDidLoad()
 
         //Adding format
-        oneXOne.layer.cornerRadius = 8
-        oneXOne.layer.borderColor = UIColor.white.cgColor
-        oneXOne.layer.borderWidth = 0.5
+        viewOneXOne.layer.cornerRadius = 8
+        viewOneXOne.layer.borderColor = UIColor.white.cgColor
+        viewOneXOne.layer.borderWidth = 0.3
+        oneXOne.layer.cornerRadius = 8        
         
+        viewTwoXOne.layer.cornerRadius = 8
+        viewTwoXOne.layer.borderColor = UIColor.white.cgColor
+        viewTwoXOne.layer.borderWidth = 0.3
         twoXOne.layer.cornerRadius = 8
-        twoXOne.layer.borderColor = UIColor.white.cgColor
-        twoXOne.layer.borderWidth = 0.5
         
+        viewThreeXOne.layer.cornerRadius = 8
+        viewThreeXOne.layer.borderColor = UIColor.white.cgColor
+        viewThreeXOne.layer.borderWidth = 0.3
         threeXOne.layer.cornerRadius = 8
-        threeXOne.layer.borderColor = UIColor.white.cgColor
-        threeXOne.layer.borderWidth = 0.5
         
+        viewOneXTo.layer.cornerRadius = 8
+        viewOneXTo.layer.borderColor = UIColor.white.cgColor
+        viewOneXTo.layer.borderWidth = 0.3
         oneXTwo.layer.cornerRadius = 8
-        oneXTwo.layer.borderColor = UIColor.white.cgColor
-        oneXTwo.layer.borderWidth = 0.5
         
+        viewTwoXTwo.layer.cornerRadius = 8
+        viewTwoXTwo.layer.borderColor = UIColor.white.cgColor
+        viewTwoXTwo.layer.borderWidth = 0.3
         twoXTwo.layer.cornerRadius = 8
-        twoXTwo.layer.borderColor = UIColor.white.cgColor
-        twoXTwo.layer.borderWidth = 0.5
         
+        viewThreeXThree.layer.cornerRadius = 8
+        viewThreeXThree.layer.borderColor = UIColor.white.cgColor
+        viewThreeXThree.layer.borderWidth = 0.3
         threeXThree.layer.cornerRadius = 8
-        threeXThree.layer.borderColor = UIColor.white.cgColor
-        threeXThree.layer.borderWidth = 0.5
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
